@@ -7,6 +7,8 @@
 @use '@angular/material' as mat;
 
 html {
+  // On conserve la config Material mais on va surcharger certaines couleurs
+  // via nos propres variables CSS (accent, etc.).
   @include mat.theme((
     color: (
       primary: mat.$cyan-palette,
@@ -17,23 +19,41 @@ html {
   ));
 }
 
-body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
-  margin: 0;
+// Variables globales de thème applicatif
+:root {
+  --accent-color: #ff5349; // sera mis à jour dynamiquement par ThemeService
 }
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #0b0b0f;
+  color: #f9fafb;
+  color-scheme: dark;
+}
+
+body.theme-light {
+  background-color: #f9fafb;
+  color: #020617;
+  color-scheme: light;
+}
+
+body.theme-dark {
+  background-color: #020617;
+  color: #e5e7eb;
+  color-scheme: dark;
+}
+
+// Quelques mappings simples vers les variables Material pour que
+// les composants Angular Material utilisent notre accent.
+body {
+  --mat-sys-primary: var(--accent-color);
+  --mat-sys-on-primary: #ffffff;
+}
+
+/* You can add global styles to this file, and also import other style files */
