@@ -1,0 +1,27 @@
+<div class="switcher">
+  <button mat-icon-button class="close-btn">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <h3 class="title">Color switcher</h3>
+
+  <div class="colors">
+    @for (color of colors; track color) {
+      <button
+        type="button"
+        class="color-dot"
+        [ngClass]="{ selected: accent() === color }"
+        [style.background-color]="color"
+        (click)="setAccent(color)"
+      ></button>
+    }
+  </div>
+
+  <div class="mode-section">
+    <h4>Body skin</h4>
+    <mat-radio-group [value]="mode()" (change)="setMode($event.value)">
+      <mat-radio-button value="dark">Dark</mat-radio-button>
+      <mat-radio-button value="light">Light</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
