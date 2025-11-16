@@ -22,6 +22,24 @@ html {
 // Variables globales de thème applicatif
 :root {
   --accent-color: #ff5349; // sera mis à jour dynamiquement par ThemeService
+  --shell-panel-bg: #0b0b0f;   // fond par défaut des panneaux (sidenav, header mobile, etc.)
+  --shell-panel-text: #f9fafb; // texte par défaut sur ces panneaux
+  --shell-content-bg: #262626; // fond par défaut de la zone de contenu
+}
+
+/* Supprime les coins arrondis et force le fond/couleur du panneau MatSidenav (menu de gauche) */
+.shell .mat-drawer-inner-container,
+.shell .mat-mdc-sidenav-inner-container,
+.shell .mat-mdc-sidenav,
+.shell .mat-drawer {
+  border-radius: 0 !important;
+  background-color: var(--shell-panel-bg) !important;
+  color: var(--shell-panel-text) !important;
+}
+
+.shell .mat-sidenav-content,
+.shell .mat-mdc-sidenav-content {
+  background-color: var(--shell-content-bg) !important;
 }
 
 html,
@@ -32,21 +50,27 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-  background-color: #0b0b0f;
+  background-color: #262626;
   color: #f9fafb;
   color-scheme: dark;
 }
 
 body.theme-light {
-  background-color: #f9fafb;
+  background-color: #ffffff; // fond global vraiment blanc
   color: #020617;
   color-scheme: light;
+  --shell-panel-bg: #fcfaf5; // blanc cassé légèrement chaud (beige), pour le menu
+  --shell-panel-text: #020617;
+  --shell-content-bg: #ffffff; // même blanc que le body pour la zone de contenu
 }
 
 body.theme-dark {
-  background-color: #020617;
+  background-color: #262626;  
   color: #e5e7eb;
   color-scheme: dark;
+  --shell-panel-bg: #1f1f1f;  
+  --shell-panel-text: #f9fafb;
+  --shell-content-bg: #262626; // zone de contenu alignée sur le fond global en dark
 }
 
 body {

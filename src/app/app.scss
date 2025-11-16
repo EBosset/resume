@@ -1,4 +1,3 @@
-
 .shell {
   height: 100vh;
   width: 100vw;
@@ -8,16 +7,11 @@
   width: 260px;
   padding: 1.5rem 1.75rem;
   box-sizing: border-box;
-  background-color: #000000; // panneau latéral très sombre (quasi noir)
-  color: #e5e7eb;
+  background-color: var(--shell-panel-bg);
+  color: var(--shell-panel-text);
   border-right: 1px solid rgba(15, 23, 42, 0.8);
 }
 
-body.theme-light .shell__sidenav {
-  background-color: #f1f5f9;
-  color: #020617;
-  border-right-color: rgba(148, 163, 184, 0.6);
-}
 
 .shell__content {
   padding: 3rem 4rem;
@@ -25,6 +19,7 @@ body.theme-light .shell__sidenav {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  background-color: var(--shell-content-bg);
 }
 
 .sections {
@@ -125,8 +120,12 @@ body.theme-light .shell__sidenav {
 }
 
 .shell__sidenav a {
-  color: #e5e7eb;          // texte gris très clair
+  color: var(--shell-panel-text);
   text-decoration: none;
+}
+
+body.theme-light .shell__sidenav a {
+  color: var(--shell-panel-text);
 }
 
 .shell__sidenav a:hover,

@@ -10,12 +10,22 @@ export class CustomCursorComponent {
   x = signal(0);
   y = signal(0);
   visible = signal(false);
+  private hideTimeoutId: number | null = null;
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     this.visible.set(true);
     this.x.set(event.clientX);
     this.y.set(event.clientY);
+
+    if (this.hideTimeoutId !== null) {
+      window.clearTimeout(this.hideTimeoutId);
+    }
+
+    this.hideTimeoutId = window.setTimeout(() => {
+      this.visible.set(false);
+      this.hideTimeoutId = null;
+    }, 500);
   }
 
   @HostListener('document:mouseleave')

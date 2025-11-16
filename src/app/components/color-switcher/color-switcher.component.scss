@@ -1,8 +1,35 @@
+.switcher-toggle {
+  position: fixed;
+  top: 5%;
+  right: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.switcher-toggle mat-icon {
+  font-size: 26px;        
+  line-height: 1;
+}
+
+.toggle-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  display: block;
+}
+
 .switcher {
   position: fixed;
-  top: 50%;
+  top: 5%;
   right: 0.75rem;
-  transform: translateY(-50%);
   background: var(--bg-surface, #ffffff);
   color: var(--text-primary, #111827);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
@@ -59,4 +86,16 @@
 
 mat-radio-button {
   display: block;
+}
+
+@media (max-width: 768px) {
+  .switcher-toggle {
+    top: 10%;
+    bottom: 1.5rem;   // bouton près du bas de l’écran
+  }
+
+  .switcher {
+    top: 10%;
+    bottom: 4.5rem;   // panneau juste au-dessus du bouton
+  }
 }

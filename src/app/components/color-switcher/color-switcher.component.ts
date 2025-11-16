@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,6 +17,7 @@ export class ColorSwitcherComponent {
 
   readonly mode = this.theme.mode;
   readonly accent = this.theme.accent;
+  readonly isOpen = signal(false);
 
   readonly colors = [
     '#FF5349',
@@ -39,5 +40,9 @@ export class ColorSwitcherComponent {
 
   setMode(mode: 'light' | 'dark'): void {
     this.theme.setMode(mode);
+  }
+
+  toggle(): void {
+    this.isOpen.update((value) => !value);
   }
 }
