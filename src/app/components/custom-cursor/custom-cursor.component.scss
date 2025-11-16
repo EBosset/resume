@@ -1,0 +1,22 @@
+.cursor {
+  position: fixed;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background-color: var(--accent-color);         // cercle rempli
+  border: 0;                                     // pas de bord dur
+  box-shadow:
+    0 0 0 6px rgba(0, 0, 0, 0.25),              // halo sombre
+    0 0 18px rgba(0, 0, 0, 0.35);               // diffusion plus douce
+  z-index: 9999;
+  transition:
+    transform 0.1s ease-out,
+    background-color 0.15s ease-out,
+    box-shadow 0.15s ease-out;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}

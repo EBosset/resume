@@ -49,11 +49,15 @@ body.theme-dark {
   color-scheme: dark;
 }
 
-// Quelques mappings simples vers les variables Material pour que
-// les composants Angular Material utilisent notre accent.
 body {
   --mat-sys-primary: var(--accent-color);
   --mat-sys-on-primary: #ffffff;
 }
+html,
+body {
+  cursor: none;
+}
 
-/* You can add global styles to this file, and also import other style files */
+body * {
+  cursor: none;
+}

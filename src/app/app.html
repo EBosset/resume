@@ -3,31 +3,111 @@
     <div class="logo">{{ title() }}</div>
 
     <nav class="nav">
-      <a mat-list-item routerLink="/home" routerLinkActive="nav__item--active" class="nav__item">
+      <a
+        mat-list-item
+        class="nav__item"
+        [class.nav__item--active]="activeSection() === 'home'"
+        (click)="scrollToSection('home')"
+      >
         Accueil
       </a>
-      <a mat-list-item routerLink="/biography" routerLinkActive="nav__item--active" class="nav__item">
+      <a
+        mat-list-item
+        class="nav__item"
+        [class.nav__item--active]="activeSection() === 'biography'"
+        (click)="scrollToSection('biography')"
+      >
         Biographie
       </a>
-      <a mat-list-item routerLink="/services" routerLinkActive="nav__item--active" class="nav__item">
+      <a
+        mat-list-item
+        class="nav__item"
+        [class.nav__item--active]="activeSection() === 'services'"
+        (click)="scrollToSection('services')"
+      >
         Services
       </a>
-      <a mat-list-item routerLink="/portfolio" routerLinkActive="nav__item--active" class="nav__item">
+      <a
+        mat-list-item
+        class="nav__item"
+        [class.nav__item--active]="activeSection() === 'portfolio'"
+        (click)="scrollToSection('portfolio')"
+      >
         Portfolio
       </a>
-      <a mat-list-item routerLink="/contact" routerLinkActive="nav__item--active" class="nav__item">
+      <a
+        mat-list-item
+        class="nav__item"
+        [class.nav__item--active]="activeSection() === 'contact'"
+        (click)="scrollToSection('contact')"
+      >
         Contact
       </a>
     </nav>
 
     <div class="nav__footer">
-      <span class="nav__copyright">© {{ currentYear }}</span>
-    </div>
+  <div class="nav__divider"></div>
+
+  <div class="nav__social">
+    <!-- Exemple LinkedIn, tu pourras ajouter d’autres icônes -->
+    <a
+      href="https://www.linkedin.com/in/edwige-bosset-48b0a817b/"
+      target="_blank"
+      rel="noopener"
+      aria-label="LinkedIn"
+      class="nav__social-icon"
+    >
+      <span>in</span>
+      <!-- plus tard tu pourras mettre un vrai svg ici -->
+    </a>
+  </div>
+
+  <div class="nav__copyright">
+    © {{ currentYear }} Edwige Bosset
+  </div>
+</div>
   </mat-sidenav>
 
   <mat-sidenav-content class="shell__content">
-    <router-outlet></router-outlet>
+    <main class="sections">
+      <section id="home" class="section" [class.section--active]="activeSection() === 'home'">
+        <app-home-section></app-home-section>
+      </section>
+
+      <section
+        id="biography"
+        class="section"
+        [class.section--active]="activeSection() === 'biography'"
+      >
+        <app-biography-section></app-biography-section>
+      </section>
+
+      <section
+        id="services"
+        class="section"
+        [class.section--active]="activeSection() === 'services'"
+      >
+        <app-services-section></app-services-section>
+      </section>
+
+      <section
+        id="portfolio"
+        class="section"
+        [class.section--active]="activeSection() === 'portfolio'"
+      >
+        <app-portfolio-section></app-portfolio-section>
+      </section>
+
+      <section
+        id="contact"
+        class="section"
+        [class.section--active]="activeSection() === 'contact'"
+      >
+        <app-contact-section></app-contact-section>
+      </section>
+    </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <app-color-switcher></app-color-switcher>
+<app-custom-cursor></app-custom-cursor>
