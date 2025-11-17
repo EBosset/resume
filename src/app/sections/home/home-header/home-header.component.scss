@@ -80,18 +80,18 @@ span {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  animation: home-header-rotate 26s linear infinite; // <-- déplacer ici
+  z-index: 0;
+  animation: home-header-rotate 26s linear infinite; 
 }
 
 .home-header__badge-photo {
   position: absolute;
-  inset: 16px;
+  inset: 2.5px;                    // très petite marge, disque presque aussi grand que le svg
   border-radius: 50%;
-  background-image: url('/assets/imgs/ed-dots-sepia-2-min.png');
+  background-image: url('/assets/imgs/ed-sepia-white.png');
   background-size: cover;
-  background-position: center;
-  z-index: 0;
+  background-position: 80% 50%;
+  z-index: 1;
   clip-path: inset(0 0 0 50%);
 }
 
@@ -114,6 +114,7 @@ span {
 
 .home-header__badge-dot {
   fill: var(--accent-color);
+  
 }
 
 
