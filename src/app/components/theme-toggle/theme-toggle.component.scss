@@ -1,9 +1,9 @@
 .theme-toggle {
   position: fixed;
-  top: 2.25rem;              // juste au-dessus du color switcher
-  right: 4rem;
-  width: 40px;
-  height: 40px;
+  top: 7%;              // juste au-dessus du color switcher
+  right: 7rem;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.7);
   display: flex;
@@ -32,7 +32,8 @@
 
 @media (max-width: 768px) {
   .theme-toggle {
-    top: 9.5%;
+    top: 10%;
     right: 1rem;
+    bottom: auto;  // à enlever si présent
   }
 }

@@ -8,8 +8,8 @@
   content: '';
   position: fixed;      // <-- reste collé à la fenêtre
   left: 260px;          // largeur de la sidenav
-  top: 5rem;
-  bottom: 5rem;           // prend toute la hauteur de viewport
+  top: 8rem;
+  bottom: 8rem;           // prend toute la hauteur de viewport
   width: 4px;
   background-color: var(--shell-panel-text); // ou var(--accent-color)
   pointer-events: none;
