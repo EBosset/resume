@@ -1,7 +1,19 @@
  .shell {
   height: 100vh;
   width: 100vw;
-  position: relative; // <-- ajouter ça
+  position: relative;
+}
+
+.shell::after {
+  content: '';
+  position: fixed;      // <-- reste collé à la fenêtre
+  left: 260px;          // largeur de la sidenav
+  top: 5rem;
+  bottom: 5rem;           // prend toute la hauteur de viewport
+  width: 4px;
+  background-color: var(--shell-panel-text); // ou var(--accent-color)
+  pointer-events: none;
+  z-index: 5;
 }
 
 
@@ -30,16 +42,6 @@
 
 }
 
-.shell__content::before {
-  content: '';
-  position: absolute;
-  left: 0;                // collé au bord gauche de la zone de contenu
-  top: 3rem;              // marge en haut
-  bottom: 3rem;           // marge en bas
-  width: 4px;             // épaisseur
-  background-color: var(--shell-panel-text); // ou var(--accent-color)
-  pointer-events: none;
-}
 
 
 .sections {
@@ -60,9 +62,10 @@
     margin-top: 56px;
   }
 
-  .shell__content::before {
+   .shell::after {
     display: none;
   }
+  
 
   .mobile-header {
     position: fixed;

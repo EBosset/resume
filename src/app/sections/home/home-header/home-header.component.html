@@ -19,16 +19,18 @@
         <defs>
           <path
             id="homeHeaderCirclePath"
-            d="M 100, 100 m -70, 0 a 70,70 0 1,1 140,0 a 70,70 0 1,1 -140,0"
+            d="M 100, 100 m -64, 0 a 64,64 0 1,1 128,0 a 64,64 0 1,1 -128,0"
           />
         </defs>
-        <circle class="home-header__badge-ring" cx="100" cy="100" r="70" />
+        <!-- Outer ring -->
+        <circle class="home-header__badge-ring" cx="100" cy="100" r="80" />
         <text class="home-header__badge-text">
           <textPath xlink:href="#homeHeaderCirclePath" startOffset="0">
-             · DÉVELOPPEUSE WEB · GRAPHISTE · CRÉATIVE · WEBDESIGNER · GRAPHISTE
+             · DÉVELOPPEUSE WEB · GRAPHISTE · CRÉATIVE · WEBDESIGNER  
           </textPath>
         </text>
-        <circle class="home-header__badge-dot" cx="100" cy="100" r="4" />
+        <!-- Inner ring -->
+        <circle class="home-header__badge-ring home-header__badge-ring--inner" cx="100" cy="100" r="52" />
       </svg>
     </div>
   </div>

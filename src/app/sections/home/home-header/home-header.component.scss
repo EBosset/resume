@@ -4,6 +4,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;              // optionnel : un peu d’espace
   text-transform: uppercase;
+  
   // background: linear-gradient(135deg, var(--accent-color), #ffffff);
   // -webkit-background-clip: text;
   // background-clip: text;
@@ -19,14 +20,15 @@ span {
 
 .home-header {
   display: grid;
-  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); // texte / cercle
+  grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr); // plus de place au texte
   align-items: center;
   column-gap: 5rem;
   min-height: 50vh; // hero plus généreux, mais toujours respirant
 }
 
 .home-header__text {
-  max-width: 600px;
+  max-width: none;
+  
 }
 
 .home-header__eyebrow {
@@ -39,10 +41,9 @@ span {
 
 .home-header__name {
   margin: 0 0 0.9rem;
-  font-size: 3.9rem;
+  font-size: 4rem;
   line-height: 1.05;
-  text-transform: uppercase;
-  
+  text-transform: uppercase;  
   
 }
 
@@ -81,8 +82,12 @@ span {
 
 .home-header__badge-ring {
   fill: none;
-  stroke: rgba(148, 163, 184, 0.4);
-  stroke-width: 1;
+  stroke: var(--accent-color); // les deux cercles en accent
+  stroke-width: 0.8;
+}
+
+.home-header__badge-ring--inner {
+  stroke: var(--accent-color);
 }
 
 .home-header__badge-text {

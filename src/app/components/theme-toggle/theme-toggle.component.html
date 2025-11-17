@@ -1,0 +1,13 @@
+<button
+  type="button"
+  class="theme-toggle"
+  [ngClass]="{
+    'theme-toggle--to-dark': mode() === 'light',
+    'theme-toggle--to-light': mode() === 'dark'
+  }"
+  (click)="toggleMode()"
+  aria-label="Toggle light or dark theme"
+>
+  <mat-icon *ngIf="mode() === 'light'">dark_mode</mat-icon>
+  <mat-icon *ngIf="mode() === 'dark'">light_mode</mat-icon>
+</button>

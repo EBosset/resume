@@ -11,6 +11,7 @@ import { BiographySectionComponent } from './sections/biography/biography.compon
 import { ServicesSectionComponent } from './sections/services/services.component';
 import { PortfolioSectionComponent } from './sections/portfolio/portfolio.component';
 import { ContactSectionComponent } from './sections/contact/contact.component';
+import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { ContactSectionComponent } from './sections/contact/contact.component';
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    ThemeToggleComponent,
     ColorSwitcherComponent,
     CustomCursorComponent,
     HomeSectionComponent,
