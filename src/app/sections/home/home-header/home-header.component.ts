@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomeHeaderComponent {
   readonly name = 'Edwige Bosset';
-  readonly role = 'DÉVELOPPEUSE WEB / GRAPHISTE / WEB DESIGNER';
+  readonly role = 'DÉVELOPPEUSE WEB / GRAPHISTE / WEBDESIGNER';
   readonly intro =
     "Mon expérience et ma créativité au service de vos projets";
 }

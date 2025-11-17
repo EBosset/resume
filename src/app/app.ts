@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -38,6 +38,8 @@ export class App {
   protected readonly title = signal('Resume');
   protected readonly currentYear = new Date().getFullYear();
   protected readonly activeSection = signal<'home' | 'biography' | 'services' | 'portfolio' | 'contact'>('home');
+  protected readonly isMobile = signal(window.innerWidth <= 768);
+  protected readonly isMobileMenuOpen = signal(false);
 
   scrollToSection(sectionId: 'home' | 'biography' | 'services' | 'portfolio' | 'contact'): void {
     this.activeSection.set(sectionId);
@@ -45,6 +47,33 @@ export class App {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    if (this.isMobile()) {
+      this.isMobileMenuOpen.set(false);
+    }
+  }
+
+  toggleMobileMenu(): void {
+    if (!this.isMobile()) {
+      return;
+    }
+    this.isMobileMenuOpen.update((open) => !open);
+  }
+
+  closeMobileMenu(): void {
+    if (!this.isMobile()) {
+      return;
+    }
+    this.isMobileMenuOpen.set(false);
+  }
+
+  @HostListener('window:resize')
+  onWindowResize(): void {
+    const mobile = window.innerWidth <= 768;
+    this.isMobile.set(mobile);
+    if (!mobile) {
+      this.isMobileMenuOpen.set(false);
     }
   }
 }

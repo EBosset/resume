@@ -6,7 +6,7 @@
   height: 44px;
   border-radius: 999px;
   border: 1px solid rgba(148, 163, 184, 0.7);
-  background: rgba(15, 23, 42, 0.85);
+  background: var(--accent-color);  // bouton rond = couleur d'accent
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,8 +30,8 @@
   position: fixed;
   top: 5%;
   right: 0.75rem;
-  background: var(--bg-surface, #ffffff);
-  color: var(--text-primary, #111827);
+  background: #ffffff;        /* panneau blanc */
+  color: #111827;             /* texte foncé lisible */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   border-radius: 0.75rem;
   padding: 1rem 1.25rem 1.25rem;

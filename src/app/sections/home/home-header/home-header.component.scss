@@ -1,12 +1,32 @@
+.stroke {
+  color: inherit;                      // même couleur que le titre
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 700;
+  letter-spacing: 0.08em;              // optionnel : un peu d’espace
+  text-transform: uppercase;
+  // background: linear-gradient(135deg, var(--accent-color), #ffffff);
+  // -webkit-background-clip: text;
+  // background-clip: text;
+  // color: transparent; // l’intérieur montre le gradient   
+}
+  
+
+
+span {
+  display: inline-block;
+}
+
+
 .home-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); // texte / cercle
   align-items: center;
-  justify-content: space-between;
-  gap: 3rem;
+  column-gap: 5rem;
+  min-height: 50vh; // hero plus généreux, mais toujours respirant
 }
 
 .home-header__text {
-  max-width: 520px;
+  max-width: 600px;
 }
 
 .home-header__eyebrow {
@@ -18,24 +38,27 @@
 }
 
 .home-header__name {
-  margin: 0 0 0.35rem;
-  font-size: 3.25rem;
+  margin: 0 0 0.9rem;
+  font-size: 3.9rem;
   line-height: 1.05;
+  text-transform: uppercase;
+  
+  
 }
 
 .home-header__role {
-  margin: 0 0 1.25rem;
-  font-size: 1rem;
-  letter-spacing: 0.08em;
+  margin: 0 0 1.75rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   opacity: 0.8;
 }
 
 .home-header__intro {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.7;
-  max-width: 36rem;
+  font-size: 1.02rem;
+  line-height: 1.9;
+  max-width: 38rem;
   opacity: 0.85;
 }
 
@@ -47,8 +70,8 @@
 }
 
 .home-header__badge-inner {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
 }
 
 .home-header__badge-svg {
@@ -88,9 +111,15 @@
 
 @media (max-width: 768px) {
   .home-header {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
+  }
+
+  .home-header__text {
+    align-self: stretch;
+   
   }
 
   .home-header__badge-inner {

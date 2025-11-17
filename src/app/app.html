@@ -1,5 +1,24 @@
+<header class="mobile-header">
+  <div class="mobile-header__inner">
+    <div class="mobile-header__logo">{{ title() }}</div>
+    <button
+      mat-icon-button
+      class="mobile-header__hamburger"
+      type="button"
+      (click)="toggleMobileMenu()"
+      aria-label="Menu"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</header>
+
 <mat-sidenav-container class="shell">
-  <mat-sidenav mode="side" opened class="shell__sidenav">
+  <mat-sidenav
+    class="shell__sidenav"
+    [mode]="isMobile() ? 'over' : 'side'"
+    [opened]="isMobile() ? isMobileMenuOpen() : true"
+  >
     <div class="logo">{{ title() }}</div>
 
     <nav class="nav">
@@ -7,7 +26,7 @@
         mat-list-item
         class="nav__item"
         [class.nav__item--active]="activeSection() === 'home'"
-        (click)="scrollToSection('home')"
+        (click)="scrollToSection('home'); closeMobileMenu()"
       >
         Accueil
       </a>
@@ -15,7 +34,7 @@
         mat-list-item
         class="nav__item"
         [class.nav__item--active]="activeSection() === 'biography'"
-        (click)="scrollToSection('biography')"
+        (click)="scrollToSection('biography'); closeMobileMenu()"
       >
         Biographie
       </a>
@@ -23,7 +42,7 @@
         mat-list-item
         class="nav__item"
         [class.nav__item--active]="activeSection() === 'services'"
-        (click)="scrollToSection('services')"
+        (click)="scrollToSection('services'); closeMobileMenu()"
       >
         Services
       </a>
@@ -31,7 +50,7 @@
         mat-list-item
         class="nav__item"
         [class.nav__item--active]="activeSection() === 'portfolio'"
-        (click)="scrollToSection('portfolio')"
+        (click)="scrollToSection('portfolio'); closeMobileMenu()"
       >
         Portfolio
       </a>
@@ -39,7 +58,7 @@
         mat-list-item
         class="nav__item"
         [class.nav__item--active]="activeSection() === 'contact'"
-        (click)="scrollToSection('contact')"
+        (click)="scrollToSection('contact'); closeMobileMenu()"
       >
         Contact
       </a>
