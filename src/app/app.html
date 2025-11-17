@@ -89,41 +89,54 @@
 
   <mat-sidenav-content class="shell__content">
     <main class="sections">
-      <section id="home" class="section" [class.section--active]="activeSection() === 'home'">
-        <app-home-section></app-home-section>
-      </section>
+       
+          <section id="home" 
+          class="section" 
+          [class.section--active]="activeSection() === 'home'">
+            <div class="section__inner">
+              <app-home-section></app-home-section>
+            </div>
+          </section>
 
-      <section
-        id="biography"
-        class="section"
-        [class.section--active]="activeSection() === 'biography'"
-      >
-        <app-biography-section></app-biography-section>
-      </section>
+          <section id="biography"  
+          class="section section--alt"
+          [class.section--active]="activeSection() === 'biography'"
+          >
+            <div class="section__inner">
+              <app-biography-section></app-biography-section>
+            </div>
+          </section>
 
-      <section
-        id="services"
-        class="section"
-        [class.section--active]="activeSection() === 'services'"
-      >
-        <app-services-section></app-services-section>
-      </section>
+          <section
+            id="services"
+            class="section"
+            [class.section--active]="activeSection() === 'services'"
+          >
+          <div class="section__inner">
+            <app-services-section></app-services-section>
+          </div>
+          </section>
 
-      <section
-        id="portfolio"
-        class="section"
-        [class.section--active]="activeSection() === 'portfolio'"
-      >
-        <app-portfolio-section></app-portfolio-section>
-      </section>
+          <section
+            id="portfolio"
+            class="section section--alt"
+            [class.section--active]="activeSection() === 'portfolio'"
+          >
+          <div class="section__inner">
+            <app-portfolio-section></app-portfolio-section>
+          </div>
+          </section>
 
-      <section
-        id="contact"
-        class="section"
-        [class.section--active]="activeSection() === 'contact'"
-      >
-        <app-contact-section></app-contact-section>
-      </section>
+          <section
+            id="contact"
+            class="section"
+            [class.section--active]="activeSection() === 'contact'"
+          >
+          <div class="section__inner">
+            <app-contact-section></app-contact-section>
+          </div>
+          </section>
+  
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>

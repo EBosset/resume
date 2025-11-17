@@ -21,8 +21,9 @@ export class ColorSwitcherComponent {
 
   readonly colors = [
     '#FF5349',
-    '#FF9800',
-    '#FFC107',
+    '#a3f307',
+    '#634352',
+    '#605e2d',
     '#03A9F4',
     '#00BCD4',
     '#4CAF50',

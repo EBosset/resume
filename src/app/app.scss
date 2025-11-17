@@ -1,7 +1,9 @@
  .shell {
   height: 100vh;
   width: 100vw;
+  position: relative; // <-- ajouter ça
 }
+
 
 .mobile-header {
   display: none;
@@ -13,31 +15,53 @@
   box-sizing: border-box;
   background-color: var(--shell-panel-bg);
   color: var(--shell-panel-text);
-  border-right: 1px solid rgba(15, 23, 42, 0.8);
+  
 }
 
 
 .shell__content {
-  padding: 2.25rem 4rem 3rem; // un peu moins de marge en haut pour remonter le contenu
+  padding: 2.25rem 0 3rem;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
-  justify-content: center;     // au lieu de flex-start
+  justify-content: center;
   background-color: var(--shell-content-bg);
+  position: relative; // pour positionner le trait
+
 }
 
+.shell__content::before {
+  content: '';
+  position: absolute;
+  left: 0;                // collé au bord gauche de la zone de contenu
+  top: 3rem;              // marge en haut
+  bottom: 3rem;           // marge en bas
+  width: 4px;             // épaisseur
+  background-color: var(--shell-panel-text); // ou var(--accent-color)
+  pointer-events: none;
+}
+
+
 .sections {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  width: 100%;
+  display: block;
+  width: 100%; 
+  
+}
+
+.sections__inner {
   max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4rem; // marge intérieure pour respirer (optionnel)
 }
 
 @media (max-width: 768px) {
   .shell {
     height: calc(100vh - 56px);
     margin-top: 56px;
+  }
+
+  .shell__content::before {
+    display: none;
   }
 
   .mobile-header {
@@ -137,16 +161,25 @@
 }
 
 .section {
-  max-width: 900px;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  
+  min-height: 70vh;  
+  background-color: var(--shell-content-bg);
+}
+
+.section__inner {
+  max-width: 960px;      // colonne un peu plus étroite
+  margin: 0 auto;
+  padding: 0 3rem;       // plus d’air à gauche/droite
+}
+
+.section--alt {
+  background-color: var(--shell-content-alt-bg);
 }
 
 .section:first-child {
   min-height: auto;
   margin-top: 0;
+  padding-top: 3rem;   // espace au-dessus du hero
   justify-content: flex-start;
 }
 

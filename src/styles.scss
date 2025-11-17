@@ -5,10 +5,7 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
-@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Gruppo&family=Wire+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
 
 html {
@@ -61,21 +58,24 @@ body {
 }
 
 body.theme-light {
-  background-color: #ffffff; // fond global vraiment blanc
+  background-color: #ffffff;
   color: #020617;
   color-scheme: light;
-  --shell-panel-bg: #fcfaf5; // blanc cassé légèrement chaud (beige), pour le menu
+  --shell-panel-bg: #fcfaf5;
   --shell-panel-text: #020617;
-  --shell-content-bg: #ffffff; // même blanc que le body pour la zone de contenu
+  --shell-content-bg: #ffffff;      // section type A
+  --shell-content-alt-bg: #f4f4f5;  // gris très léger pour alterner
 }
 
+
 body.theme-dark {
-  background-color: #262626;  
+  background-color: #262626;
   color: #e5e7eb;
   color-scheme: dark;
-  --shell-panel-bg: #1f1f1f;  
+  --shell-panel-bg: #1f1f1f;
   --shell-panel-text: #f9fafb;
-  --shell-content-bg: #262626; // zone de contenu alignée sur le fond global en dark
+  --shell-content-bg: #262626;   // section type A
+  --shell-content-alt-bg: #333333; // section type B, un peu plus contrastée
 }
 
 body {
