@@ -10,6 +10,7 @@ export class CustomCursorComponent {
   x = signal(0);
   y = signal(0);
   visible = signal(false);
+  pressed = signal(false);
   private hideTimeoutId: number | null = null;
 
   @HostListener('document:mousemove', ['$event'])
@@ -31,5 +32,16 @@ export class CustomCursorComponent {
   @HostListener('document:mouseleave')
   onMouseLeave() {
     this.visible.set(false);
+    this.pressed.set(false);
+  }
+
+  @HostListener('document:mousedown')
+  onMouseDown() {
+    this.pressed.set(true);
+  }
+
+  @HostListener('document:mouseup')
+  onMouseUp() {
+    this.pressed.set(false);
   }
 }

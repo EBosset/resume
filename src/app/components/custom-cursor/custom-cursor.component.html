@@ -1,6 +1,7 @@
 <div
   class="cursor"
   [class.cursor--hidden]="!visible()"
+  [class.cursor--pressed]="pressed()"
   [style.left.px]="x()"
   [style.top.px]="y()"
 ></div>
