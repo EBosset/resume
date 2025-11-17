@@ -1,7 +1,16 @@
+<!-- Anneau : suit la souris avec un léger retard et gère l'état pressé -->
 <div
-  class="cursor"
+  class="cursor cursor--ring"
   [class.cursor--hidden]="!visible()"
   [class.cursor--pressed]="pressed()"
+  [style.left.px]="x()"
+  [style.top.px]="y()"
+></div>
+
+<!-- Point central : se déplace plus vite, disparaît au clic -->
+<div
+  class="cursor cursor--dot"
+  [class.cursor--hidden]="!visible() || pressed()"
   [style.left.px]="x()"
   [style.top.px]="y()"
 ></div>
