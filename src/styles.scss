@@ -78,6 +78,15 @@ body.theme-dark {
   --shell-content-alt-bg: #333333; // section type B, un peu plus contrastée
 }
 
+/* Backdrop de la modale Services : adapté au thème */
+body.theme-dark .service-detail__backdrop {
+  background: rgba(26, 26, 26, 0.85); // gris très sombre légèrement transparent
+}
+
+body.theme-light .service-detail__backdrop {
+  background: rgba(251, 252, 250, 0.75); // léger voile gris froid sur fond clair
+}
+
 body {
   --mat-sys-primary: var(--accent-color);
   --mat-sys-on-primary: #ffffff;

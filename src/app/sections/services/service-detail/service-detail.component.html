@@ -11,26 +11,25 @@
       ✕
     </button>
 
-    <div class="service-detail__image-wrapper">
-      <img
-        class="service-detail__image"
-        [src]="service.imageUrl"
-        [alt]="service.title"
-      />
-    </div>
+    <div class="service-detail__inner">
+      <div class="service-detail__image-wrapper">
+        <img
+          class="service-detail__image"
+          [src]="service.imageUrl"
+          [alt]="service.title"
+        />
+      </div>
 
-    <div class="service-detail__body">
-      <h3 class="service-detail__title">
-        {{ service.title }}
-      </h3>
+      <div class="service-detail__body">
+        <h3 class="service-detail__title">
+          {{ service.title }}
+        </h3>
+      
 
-      <p class="service-detail__intro">
-        {{ service.shortDescription }}
-      </p>
-
-      <p class="service-detail__content">
-        {{ service.content }}
-      </p>
+        <p class="service-detail__content">
+          {{ service.content }}
+        </p>
+      </div>
     </div>
   </div>
 }

@@ -1,7 +1,7 @@
 .service-detail__backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(0, 0, 0, 0.6); // valeur par défaut, surchargée par les thèmes globalement
   z-index: 40;
 }
 
@@ -10,14 +10,22 @@
   inset: 4rem 6vw auto;
   max-width: 900px;
   margin: 0 auto;
-  background: var(--accent-color);
-  color: #0f172a;
+  background: var(--accent-color); // bord en accent
+  color: inherit;                  // <-- au lieu de #0f172a
   border-radius: 1.1rem;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
-  overflow: hidden;
+  padding: 3px;
   z-index: 50;
   display: flex;
   flex-direction: column;
+}
+
+.service-detail__inner {
+  background: var(--shell-content-bg);
+  color: inherit;
+  border-radius: 0.95rem;
+  overflow: hidden;
+  padding: 1.5rem 1.75rem 1.9rem;
 }
 
 .service-detail__close {
@@ -43,10 +51,6 @@
   border-radius: 0.9rem;
   object-fit: cover;
   max-height: 360px;
-}
-
-.service-detail__body {
-  padding: 1.5rem 1.75rem 1.9rem;
 }
 
 .service-detail__title {
