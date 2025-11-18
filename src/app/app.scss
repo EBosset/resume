@@ -42,8 +42,6 @@
 
 }
 
-
-
 .sections {
   display: block;
   width: 100%; 
@@ -53,7 +51,13 @@
 .sections__inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 4rem; // marge intérieure pour respirer (optionnel)
+  padding: 0 4rem; // marge intérieure 
+}
+
+.section__inner--wide {
+  max-width: 100%;    // le wrapper peut prendre toute la largeur
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 @media (max-width: 768px) {

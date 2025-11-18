@@ -1,0 +1,15 @@
+<button type="button" class="service-card" (click)="onOpen()">
+  <div class="service-card__header">
+    <mat-icon class="service-card__icon">
+      {{ service.icon }}
+    </mat-icon>
+
+    <h3 class="service-card__title">{{ service.title }}</h3>
+  </div>
+
+  <p class="service-card__summary">
+    {{ service.shortDescription }}
+  </p>
+
+  <span class="service-card__more">Voir +</span>
+</button>

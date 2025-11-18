@@ -1,3 +1,19 @@
 .section--services {
-  padding: 2rem 0;
+  padding: 1rem 0;
+}
+
+/* Conteneur interne réellement centré et plus étroit */
+.services__inner {
+  max-width: 1100px;      // clé : plus petit que l’écran
+  margin: 0 auto;         // centre ce bloc
+  padding: 0 1.5rem;
+}
+
+/* Grille de cards centrée dans services__inner */
+.section--services .services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  max-width: 1100px;      // éventuellement optionnel si = services__inner
+  margin: 0 auto;         // aligne la grille sur le centre
 }

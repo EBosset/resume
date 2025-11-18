@@ -98,8 +98,18 @@
             </div>
           </section>
 
+          <section
+            id="services"
+            class="section section--alt section--services"
+            [class.section--active]="activeSection() === 'services'"
+          >
+            <div class="section__inner--wide">
+              <app-services-section></app-services-section>
+            </div>
+          </section>
+
           <section id="biography"  
-          class="section section--alt"
+          class="section"
           [class.section--active]="activeSection() === 'biography'"
           >
             <div class="section__inner">
@@ -107,24 +117,16 @@
             </div>
           </section>
 
-          <section
-            id="services"
-            class="section"
-            [class.section--active]="activeSection() === 'services'"
-          >
-          <div class="section__inner">
-            <app-services-section></app-services-section>
-          </div>
-          </section>
+          
 
           <section
             id="portfolio"
             class="section section--alt"
             [class.section--active]="activeSection() === 'portfolio'"
           >
-          <div class="section__inner">
-            <app-portfolio-section></app-portfolio-section>
-          </div>
+            <div class="section__inner section__inner--wide">
+              <app-portfolio-section></app-portfolio-section>
+            </div>
           </section>
 
           <section
@@ -132,9 +134,9 @@
             class="section"
             [class.section--active]="activeSection() === 'contact'"
           >
-          <div class="section__inner">
-            <app-contact-section></app-contact-section>
-          </div>
+            <div class="section__inner section__inner--wide">
+              <app-contact-section></app-contact-section>
+            </div>
           </section>
   
     </main>

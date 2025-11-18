@@ -31,14 +31,6 @@ span {
   
 }
 
-.home-header__eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  opacity: 0.6;
-}
-
 .home-header__name {
   margin: 0 0 0.9rem;
   font-size: 4rem;
@@ -88,9 +80,9 @@ span {
   position: absolute;
   inset: 2.5px;                    // très petite marge, disque presque aussi grand que le svg
   border-radius: 50%;
-  background-image: url('/assets/imgs/ed-sepia-white.png');
+  background-image: url('/assets/imgs/ed-dots-sepia-2-min.png');
   background-size: cover;
-  background-position: 80% 50%;
+  background-position: center left;
   z-index: 1;
   clip-path: inset(0 0 0 50%);
 }
@@ -110,11 +102,6 @@ span {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   fill: currentColor;
-}
-
-.home-header__badge-dot {
-  fill: var(--accent-color);
-  
 }
 
 

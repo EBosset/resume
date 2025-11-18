@@ -1,5 +1,4 @@
 import { Component, HostListener, signal } from '@angular/core';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,10 +15,7 @@ import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.com
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
+  imports: [    
     MatSidenavModule,
     MatListModule,
     MatIconModule,

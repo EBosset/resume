@@ -1,3 +1,24 @@
-<section class="section section--services">
-  <h1 class="section__title">Services</h1>
+<section class="section section--services" id="services">
+  <div class="services__inner">
+    <header class="services__header">
+      <h2 class="section-title">Services</h2>
+      <p class="section-subtitle">
+        Ce que je peux faire pour tes projets.
+      </p>
+    </header>
+
+    <div class="services__grid">
+      @for (service of services; track service.id) {
+        <app-service-card
+          [service]="service"
+          (open)="openService($event)"
+        ></app-service-card>
+      }
+    </div>
+
+    <app-service-detail
+      [service]="selected()"
+      (close)="closeService()"
+    ></app-service-detail>
+  </div>
 </section>
