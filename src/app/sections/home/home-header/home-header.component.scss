@@ -11,8 +11,6 @@
   // color: transparent; // l’intérieur montre le gradient   
 }
   
-
-
 span {
   display: inline-block;
 }
@@ -20,10 +18,12 @@ span {
 
 .home-header {
   display: grid;
-  grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr); // plus de place au texte
+  grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr); 
   align-items: center;
   column-gap: 5rem;
-  min-height: 50vh; // hero plus généreux, mais toujours respirant
+  min-height: 50vh; 
+  margin-bottom:7%
+
 }
 
 .home-header__text {

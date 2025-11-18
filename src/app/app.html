@@ -118,19 +118,19 @@
             class="section"
             [class.section--active]="activeSection() === 'portfolio'"
           >
-            <div class="section__inner section__inner--wide">
+            <div class="section__inner--wide">
               <app-portfolio-section></app-portfolio-section>
             </div>
           </section>
 
-           <section id="biography"  
-          class="section section--alt"
-          [class.section--active]="activeSection() === 'biography'"
+          <section id="biography"  
+            class="section section--alt"
+            [class.section--active]="activeSection() === 'biography'"
           >
-            <div class="section__inner">
+            <div class="section__inner--wide">
               <app-biography-section></app-biography-section>
             </div>
-          </section>
+          </section>  
 
 
           <section
@@ -138,14 +138,15 @@
             class="section"
             [class.section--active]="activeSection() === 'contact'"
           >
-            <div class="section__inner section__inner--wide">
+            <div class="section__inner--wide">
               <app-contact-section></app-contact-section>
             </div>
           </section>
   
     </main>
-   <app-theme-toggle></app-theme-toggle>
+    <app-theme-toggle></app-theme-toggle>
     <app-color-switcher></app-color-switcher>
-    <app-custom-cursor></app-custom-cursor>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<app-custom-cursor></app-custom-cursor>

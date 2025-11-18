@@ -9,9 +9,7 @@
 
 
 html {
-  // On conserve la config Material mais on va surcharger certaines couleurs
-  // via nos propres variables CSS (accent, etc.).
-  @include mat.theme((
+    @include mat.theme((
     color: (
       primary: mat.$cyan-palette,
       tertiary: mat.$orange-palette,
@@ -27,6 +25,23 @@ html {
   --shell-panel-bg: #0b0b0f;   // fond par défaut des panneaux (sidenav, header mobile, etc.)
   --shell-panel-text: #f9fafb; // texte par défaut sur ces panneaux
   --shell-content-bg: #262626; // fond par défaut de la zone de contenu
+}
+
+.section__header {
+  max-width: 1400px;
+  margin: 0 auto 2.5rem;
+  padding: 0 2rem;
+}
+
+.section__title {
+  font-size: 2.8rem;
+  margin: 0;
+}
+
+.section__subtitle {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.8;
 }
 
 /* Supprime les coins arrondis et force le fond/couleur du panneau MatSidenav (menu de gauche) */
@@ -63,8 +78,8 @@ body.theme-light {
   color-scheme: light;
   --shell-panel-bg: #ffffff;
   --shell-panel-text: #020617;
-  --shell-content-bg: #ffffff;      // section type A
-  --shell-content-alt-bg: #FBFCFA;  // gris très léger pour alterner
+  --shell-content-bg: #ffffff;      
+  --shell-content-alt-bg: #FBFCFA;  
 }
 
 
@@ -74,17 +89,17 @@ body.theme-dark {
   color-scheme: dark;
   --shell-panel-bg: #1f1f1f;
   --shell-panel-text: #f9fafb;
-  --shell-content-bg: #262626;   // section type A
-  --shell-content-alt-bg: #333333; // section type B, un peu plus contrastée
+  --shell-content-bg: #262626;   
+  --shell-content-alt-bg: #333333; 
 }
 
 /* Backdrop de la modale Services : adapté au thème */
 body.theme-dark .service-detail__backdrop {
-  background: rgba(26, 26, 26, 0.85); // gris très sombre légèrement transparent
+  background: rgba(26, 26, 26, 0.85); 
 }
 
 body.theme-light .service-detail__backdrop {
-  background: rgba(251, 252, 250, 0.75); // léger voile gris froid sur fond clair
+  background: rgba(251, 252, 250, 0.75); 
 }
 
 body {
@@ -98,4 +113,27 @@ body {
 
 body * {
   cursor: none;
+}
+
+/* Scrollbar globale */
+::-webkit-scrollbar {
+  width: 10px;          
+}
+
+::-webkit-scrollbar-track {
+  background: var(--shell-content-bg);
+       
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);  
+  border-radius: 999px;
+  border: 2px solid transparent;        
+}
+
+@media (max-width: 768px) {
+  .section__title,
+  .section__subtitle {
+    text-align: center;
+  }
 }
