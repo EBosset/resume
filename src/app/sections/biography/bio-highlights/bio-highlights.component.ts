@@ -8,7 +8,7 @@ import { BIOGRAPHY_HIGHLIGHTS } from '../biography.data';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './bio-highlights.component.html',
-  styleUrl: './bio-highlights.component.scss',
+  styleUrls: ['./bio-highlights.component.scss'],
 })
 export class BioHighlightsComponent {
   readonly highlights = BIOGRAPHY_HIGHLIGHTS;

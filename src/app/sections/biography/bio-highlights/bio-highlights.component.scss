@@ -1,20 +1,18 @@
 .bio-highlights {
-  @extend .card;
-  @extend .stack;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 1.25rem;
   padding: 1.25rem 0;
 }
 
 .bio-highlight {
-  @extend .card;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 
   &__label {
-    @extend .eyebrow;
+    color: var(--shell-panel-text);
+    font-weight: 700;
   }
 
   &__description {
