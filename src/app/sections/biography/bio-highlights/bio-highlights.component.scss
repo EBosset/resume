@@ -1,0 +1,32 @@
+.bio-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.25);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.bio-highlight {
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: var(--shell-content-bg);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__label {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+  }
+
+  &__description {
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+}

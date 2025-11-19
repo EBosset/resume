@@ -1,0 +1,8 @@
+<div class="bio-highlights">
+  @for (highlight of highlights; track highlight.id) {
+    <article class="bio-highlight">
+      <p class="bio-highlight__label">{{ highlight.label }}</p>
+      <p class="bio-highlight__description">{{ highlight.description }}</p>
+    </article>
+  }
+</div>

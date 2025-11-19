@@ -1,0 +1,23 @@
+<section class="bio-soft">
+  <div class="bio-soft__media">
+    <header class="bio-soft__header">
+      <h3 class="section__title bio-soft__title">Soft skills</h3>
+      <p class="bio-soft__subtitle">
+        Un mélange d’instinct créatif et de rigueur front-end, acquis entre atelier et interfaces.
+      </p>
+    </header>
+
+    <div class="bio-soft__illustration" [innerHTML]="illustrationSvg"></div>    
+  </div>
+
+  <div class="bio-soft__content">
+    <div class="bio-soft__list">
+      @for (skill of skills; track skill.id) {
+        <article class="bio-soft__item">
+          <p class="bio-soft__title">{{ skill.title }}</p>
+          <p class="bio-soft__description">{{ skill.description }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>

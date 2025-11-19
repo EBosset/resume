@@ -16,6 +16,28 @@ export interface PortfolioDiscipline {
   projects: PortfolioProject[];
 }
 
+const PORTFOLIO_ASSETS = [
+  '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique.png',
+  '/assets/portfolio/webdesigner-agence.jpg',
+  '/assets/portfolio/webdesigner-saas.jpg',
+  '/assets/portfolio/webdesigner-saas-wireframe.jpg',
+  '/assets/portfolio/webdesigner-saas-mobile.jpg',
+];
+
+const randomAsset = (): string =>
+  PORTFOLIO_ASSETS[Math.floor(Math.random() * PORTFOLIO_ASSETS.length)];
+
+const buildGallery = (size = 3): string[] =>
+  Array.from({ length: size }, () => randomAsset());
+
+const randomMedia = (size?: number) => {
+  const gallery = buildGallery(size);
+  return {
+    imageUrl: gallery[0],
+    gallery,
+  } satisfies Pick<PortfolioProject, 'imageUrl' | 'gallery'>;
+};
+
 export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
   {
     id: 'webdesigner',
@@ -30,13 +52,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Structure modulaire, sections storytelling et CTA clairs pour une solution SaaS B2B.',
         role: 'Wireframes + UI haute-fidélité',
         stack: ['Figma', 'FigJam'],
-        imageUrl: '/assets/portfolio/webdesigner-saas.jpg',
         link: 'https://www.behance.net/',
-        gallery: [
-          '/assets/portfolio/webdesigner-saas.jpg',
-          '/assets/portfolio/webdesigner-saas-wireframe.jpg',
-          '/assets/portfolio/webdesigner-saas-mobile.jpg',
-        ],
+        ...randomMedia(),
       },
       {
         id: 'webdesigner-agence',
@@ -45,13 +62,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Refonte complète avec hero immersif, carrousel projets et formulaire multi-étapes.',
         role: 'UI design & prototype interactif',
         stack: ['Figma', 'After Effects'],
-        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
         link: 'https://www.behance.net/',
-        gallery: [
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence-mobile.jpg',
-          '/assets/portfolio/webdesigner-agence-styleguide.jpg',
-        ],
+        ...randomMedia(),
       },
     ],
   },
@@ -68,13 +80,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Sprint UX, user journey et UI inclusive pour une app de suivi patient multi-profils.',
         role: 'UX research + UI kit',
         stack: ['Figma', 'Maze', 'Notion'],
-        imageUrl: '/assets/portfolio/uiux-sante.jpg',
         link: 'https://www.behance.net/',
-        gallery: [
-          '/assets/portfolio/uiux-sante.jpg',
-          '/assets/portfolio/uiux-sante-flows.jpg',
-          '/assets/portfolio/uiux-sante-mobile.jpg',
-        ],
+        ...randomMedia(),
       },
       {
         id: 'uiux-banque',
@@ -83,13 +90,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Ateliers co-design, tests utilisateurs et bibliothèque de composants responsive.',
         role: 'Lead UX/UI',
         stack: ['Figma', 'Storybook'],
-        imageUrl: '/assets/portfolio/uiux-banque.jpg',
         link: 'https://www.behance.net/',
-        gallery: [
-          '/assets/portfolio/uiux-banque.jpg',
-          '/assets/portfolio/uiux-banque-kit.jpg',
-          '/assets/portfolio/uiux-banque-mobile.jpg',
-        ],
+        ...randomMedia(),
       },
     ],
   },
@@ -106,13 +108,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Composants Angular standalone, charts dynamiques et theming custom pour une plateforme analytique.',
         role: 'Développement front & design system',
         stack: ['Angular', 'RxJS', 'Nx'],
-        imageUrl: '/assets/portfolio/dev-dashboard.jpg',
         link: 'https://github.com/',
-        gallery: [
-          '/assets/portfolio/dev-dashboard.jpg',
-          '/assets/portfolio/dev-dashboard-dark.jpg',
-          '/assets/portfolio/dev-dashboard-mobile.jpg',
-        ],
+        ...randomMedia(),
       },
       {
         id: 'devweb-ecommerce',
@@ -121,13 +118,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Site e-commerce headless avec animations micro-interactions, paiement Stripe et gestion de paniers offline.',
         role: 'Front-end lead',
         stack: ['Angular', 'Stripe', 'SCSS'],
-        imageUrl: '/assets/portfolio/dev-boutique.jpg',
         link: 'https://github.com/',
-        gallery: [
-          '/assets/portfolio/dev-boutique.jpg',
-          '/assets/portfolio/dev-boutique-product.jpg',
-          '/assets/portfolio/dev-boutique-checkout.jpg',
-        ],
+        ...randomMedia(),
       },
     ],
   },
@@ -144,13 +136,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Création d’un univers graphique complet (logo, signalétique, goodies textile) pour un événement local.',
         role: 'Branding & déclinaisons print',
         stack: ['Illustrator', 'Photoshop'],
-        imageUrl: '/assets/portfolio/graphiste-salon.jpg',
         link: 'https://www.behance.net/',
-        gallery: [
-          '/assets/portfolio/graphiste-salon.jpg',
-          '/assets/portfolio/graphiste-salon-detail-1.jpg',
-          '/assets/portfolio/graphiste-salon-detail-2.jpg',
-        ],
+        ...randomMedia(),
       },
       {
         id: 'plasticienne-atelier-ceramique',
@@ -159,13 +146,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Logo & charte Graphique, identité visuelle.',
         role: 'Direction artistique & design',
         stack: ['Illustrator', 'InDesign'],
-        imageUrl: '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique.png',
         link: 'https://www.behance.net/',
-        gallery: [
-          '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique.png',
-          '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique-2.png',
-          '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique-3.png',
-        ],
+        ...randomMedia(),
       },
     ],
   },

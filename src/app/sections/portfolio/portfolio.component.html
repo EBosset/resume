@@ -17,9 +17,11 @@
     }
   </div>
 
-  <div class="portfolio-content">
-    <app-portfolio-content-panel
-      [discipline]="selectedDiscipline()"
-    ></app-portfolio-content-panel>
+  <div class="portfolio__body">
+    <div class="portfolio__grid">
+      <app-portfolio-content-panel
+        [discipline]="selectedDiscipline()"
+      ></app-portfolio-content-panel>
+    </div>
   </div>
 </section>

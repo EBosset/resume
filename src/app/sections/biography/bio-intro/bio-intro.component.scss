@@ -1,0 +1,25 @@
+.bio-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  line-height: 1.9;
+  font-size: 1.05rem;
+  opacity: 0.9;
+  padding: 1rem 0;
+
+  p {
+    margin: 0;
+  }
+
+  p:first-child {
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+  }
+
+  p:last-child {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1rem;
+  }
+}

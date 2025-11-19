@@ -1,0 +1,5 @@
+<div class="bio-intro">
+  @for (paragraph of introParagraphs; track $index) {
+    <p [innerHTML]="paragraph"></p>
+  }
+</div>
