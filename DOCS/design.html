@@ -1,0 +1,496 @@
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Resume – Notes de design & thème</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          sans-serif;
+        margin: 2rem auto;
+        max-width: 960px;
+        line-height: 1.6;
+        color: #111827;
+      }
+      code {
+        background: #f3f4f6;
+        padding: 0.1rem 0.25rem;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+      h1,
+      h2,
+      h3 {
+        color: #0f172a;
+      }
+      h1 {
+        margin-bottom: 0.25rem;
+      }
+      small {
+        color: #6b7280;
+      }
+      ul {
+        padding-left: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Configuration du design & du thème</h1>
+    <small>Projet : <code>resume</code></small>
+
+    <p>
+      Ce document explique <strong>où</strong> modifier les couleurs et le thème
+      de l’application (thème global, panneau latéral gauche, couleur
+      d’accent et color switcher).
+    </p>
+
+    <hr />
+
+    <h2>1. Thème global clair / sombre</h2>
+
+    <p>
+      Fichier : <code>src/styles.scss</code>
+    </p>
+    <p>Principaux sélecteurs et variables :</p>
+    <ul>
+      <li>
+        <code>:root { --accent-color: #ff5349; }</code><br />
+        Couleur d’accent par défaut utilisée partout dans l’application.
+        <code>ThemeService</code> met à jour cette valeur dynamiquement quand
+        l’utilisateur choisit une autre couleur dans le color switcher.
+      </li>
+      <li>
+        <code>body.theme-light { ... }</code><br />
+        Couleurs de fond et de texte pour le mode clair (fond clair,
+        texte foncé). Modifie ces valeurs pour changer la base du thème clair.
+      </li>
+      <li>
+        <code>body.theme-dark { ... }</code><br />
+        Couleurs de fond et de texte pour le mode sombre (fond sombre,
+        texte clair).
+      </li>
+      <li>
+        <code>body { --mat-sys-primary: var(--accent-color); }</code><br />
+        Connecte la couleur primaire Angular Material à la variable globale
+        <code>--accent-color</code>.
+      </li>
+    </ul>
+
+    <p>
+      La classe <code>theme-light</code> ou <code>theme-dark</code> est
+      appliquée sur l’élément <code>&lt;body&gt;</code> par
+      <code>ThemeService</code> (voir ci-dessous).
+    </p>
+
+    <h2>2. Logique de thème (Signals)</h2>
+
+    <p>Fichier : <code>src/app/theme.service.ts</code></p>
+    <ul>
+      <li>
+        <code>modeSignal = signal&lt;'light' | 'dark'&gt;('dark')</code> –
+        stocke le mode de thème courant.
+      </li>
+      <li>
+        <code>accentSignal = signal&lt;string&gt;('#FF5349')</code> –
+        stocke la couleur d’accent.
+      </li>
+      <li>
+        Dans le bloc <code>effect()</code>, deux choses se passent :
+        <ul>
+          <li>
+            <code>body.classList.toggle('theme-dark' ...)</code> /<br />
+            <code>body.classList.toggle('theme-light' ...)</code>
+          </li>
+          <li>
+            <code>body.style.setProperty('--accent-color', accent)</code>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>
+      Pour changer les valeurs <strong>par défaut</strong> (sans passer par le
+      switcher), modifier les valeurs initiales de
+      <code>modeSignal</code> et <code>accentSignal</code>.
+    </p>
+
+    <h2>3. Panneau latéral gauche (navigation)</h2>
+
+    <p>Fichier : <code>src/app/app.scss</code></p>
+
+    <ul>
+      <li>
+        <code>.shell__sidenav { background-color: #000000; ... }</code><br />
+        Couleur de fond principale du panneau gauche en mode sombre.
+      </li>
+      <li>
+        <code>body.theme-light .shell__sidenav { background-color: #f1f5f9; ... }</code><br />
+        Couleur de fond du panneau gauche en mode clair.
+      </li>
+      <li>
+        <code>.shell__sidenav { color: #e5e7eb; }</code> – couleur de texte par
+        défaut dans le panneau (mode sombre).
+      </li>
+      <li>
+        <code>.nav__item { ... color: inherit; }</code> – les liens du menu
+        héritent de la couleur de texte du panneau.
+      </li>
+      <li>
+        <code>.nav__item--active, .nav__item:hover { color: var(--accent-color); }</code><br />
+        L’item de menu actif / survolé utilise la couleur d’accent globale.
+      </li>
+    </ul>
+
+    <p>
+      Pour changer la couleur du panneau, ajuster les propriétés
+      <code>background-color</code> et <code>color</code> dans les sélecteurs
+      ci-dessus.
+    </p>
+
+    <h2>4. Composant Color switcher</h2>
+
+    <p>
+      Fichiers :<br />
+      <code>src/app/components/color-switcher/color-switcher.component.ts</code><br />
+      <code>src/app/components/color-switcher/color-switcher.component.scss</code>
+    </p>
+
+    <ul>
+      <li>
+        Dans le fichier TypeScript, la liste des couleurs disponibles est
+        définie par le tableau <code>colors</code>. Exemple :
+        <br />
+        <code>[ '#FF5349', '#FF9800', '#FFC107', ... ]</code><br />
+        Ajoute, supprime ou réordonne des valeurs ici pour changer la palette
+        de couleurs proposée dans le switcher.
+      </li>
+      <li>
+        Un clic sur une couleur appelle <code>setAccent(color)</code>, ce qui
+        met à jour le <code>ThemeService</code> et donc la variable
+        <code>--accent-color</code> sur <code>&lt;body&gt;</code>.
+      </li>
+      <li>
+        Dans le fichier SCSS, l’apparence du panneau est contrôlée par des
+        sélecteurs comme <code>.switcher</code>, <code>.color-dot</code>, etc.
+        On peut modifier le fond, l’ombre, les bords arrondis, etc., sans
+        impacter le thème global.
+      </li>
+    </ul>
+
+    <h2>5. Récapitulatif</h2>
+
+    <ul>
+      <li>
+        <strong>Thème global (clair/sombre + accent) :</strong>
+        <code>src/styles.scss</code>
+      </li>
+      <li>
+        <strong>État & logique du thème (Signals) :</strong>
+        <code>src/app/theme.service.ts</code>
+      </li>
+      <li>
+        <strong>Panneau latéral (menu gauche) :</strong>
+        <code>src/app/app.scss</code>
+      </li>
+      <li>
+        <strong>Color switcher (UI + palette) :</strong>
+        <code>src/app/components/color-switcher/...</code>
+      </li>
+    </ul>
+
+
+    <h3>Footer social &amp; © année / texte complémentaire</h3>
+
+<p>
+  Le petit bloc en bas du panneau gauche (ligne de séparation, icône LinkedIn,
+  texte <code>© {{ currentYear }} Edwige Bosset</code>) est géré par
+  plusieurs éléments :
+</p>
+
+<ul>
+  <li>
+    Dans <code>src/app/app.ts</code> :
+    <br />
+    <code>protected readonly currentYear = new Date().getFullYear();</code>
+    <br />
+    Cette propriété calcule automatiquement l'année en cours.
+  </li>
+  <li>
+    Dans le template <code>src/app/app.html</code> :
+    <br />
+    <code>
+      &lt;div class=&quot;nav__footer&quot;&gt;<br />
+      &nbsp;&nbsp;&lt;div class=&quot;nav__divider&quot;&gt;&lt;/div&gt;<br />
+      &nbsp;&nbsp;&lt;div class=&quot;nav__social&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;a<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;https://www.linkedin.com/in/edwige-bosset-48b0a817b/&quot;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target=&quot;_blank&quot;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rel=&quot;noopener&quot;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aria-label=&quot;LinkedIn&quot;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class=&quot;nav__social-icon&quot;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;in&lt;/span&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- autres icônes possibles ici --&gt;<br />
+      &nbsp;&nbsp;&lt;/div&gt;<br />
+      &nbsp;&nbsp;&lt;div class=&quot;nav__copyright&quot;&gt;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;© {{ currentYear }} Edwige Bosset<br />
+      &nbsp;&nbsp;&lt;/div&gt;<br />
+      &lt;/div&gt;
+    </code>
+  </li>
+</ul>
+
+<p>
+  Pour modifier le texte ou la mise en page du footer :
+</p>
+
+<ul>
+  <li>
+    Changer le nom affiché :
+    <br />
+    <code>
+      &lt;div class=&quot;nav__copyright&quot;&gt;© {{ currentYear }} Ton Nom&lt;/div&gt;
+    </code>
+  </li>
+  <li>
+    Remplacer l’année dynamique par une valeur fixe :
+    <br />
+    <code>
+      &lt;div class=&quot;nav__copyright&quot;&gt;© 2025 Ton Nom&lt;/div&gt;
+    </code>
+    (dans ce cas, on peut supprimer la propriété <code>currentYear</code> de
+    <code>app.ts</code>).
+  </li>
+  <li>
+    Modifier le lien LinkedIn ou ajouter d’autres icônes en dupliquant
+    l’élément
+    <code>&lt;a class=&quot;nav__social-icon&quot;&gt;...&lt;/a&gt;</code>.
+  </li>
+  <li>
+    Ajouter de l’espace ou ajuster la typographie du footer : dans
+    <code>src/app/app.scss</code>, modifier la règle
+    <code>.nav__footer</code> (par exemple :
+    <code>.nav__footer { margin-top: 3rem; font-size: 1rem; ... }</code>) ainsi
+    que les règles <code>.nav__divider</code>, <code>.nav__social</code> et
+    <code>.nav__copyright</code>.
+  </li>
+</ul>
+<section id="custom-cursor">
+  <h2>Curseur personnalisé</h2>
+
+  <p>
+    Le curseur personnalisé est implémenté comme un composant Angular autonome
+    et utilise la couleur d’accent globale (<code>--accent-color</code>) du thème.
+    Il apparaît uniquement lorsque la souris bouge, puis disparaît après un court délai.
+  </p>
+
+  <h3>Fichiers à modifier</h3>
+  <ul>
+    <li>
+      <strong>Logique du composant</strong><br>
+      <code>src/app/components/custom-cursor/custom-cursor.component.ts</code>
+    </li>
+    <li>
+      <strong>Template</strong><br>
+      <code>src/app/components/custom-cursor/custom-cursor.component.html</code>
+    </li>
+    <li>
+      <strong>Styles (design)</strong><br>
+      <code>src/app/components/custom-cursor/custom-cursor.component.scss</code>
+    </li>
+    <li>
+      <strong>Masquage global du curseur natif</strong> (optionnel)<br>
+      <code>src/styles.scss</code> – règles sur <code>html, body, body *</code>
+      pour cacher le curseur natif du navigateur.
+    </li>
+  </ul>
+
+  <h3>Logique du composant</h3>
+  <p>
+    Le composant suit la position de la souris avec des signals et gère la
+    visibilité et l’état « pressé ». On ne modifie ici que le comportement
+    (timing, clic), pas le design.
+  </p>
+
+  <pre><code class="language-ts">
+// src/app/components/custom-cursor/custom-cursor.component.ts
+
+import { Component, HostListener, signal } from '@angular/core';
+
+@Component({
+  selector: 'app-custom-cursor',
+  standalone: true,
+  templateUrl: './custom-cursor.component.html',
+  styleUrl: './custom-cursor.component.scss',
+})
+export class CustomCursorComponent {
+  x = signal(0);
+  y = signal(0);
+  visible = signal(false);
+  pressed = signal(false);
+  private hideTimeoutId: number | null = null;
+
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    this.visible.set(true);
+    this.x.set(event.clientX);
+    this.y.set(event.clientY);
+
+    if (this.hideTimeoutId !== null) {
+      window.clearTimeout(this.hideTimeoutId);
+    }
+
+    this.hideTimeoutId = window.setTimeout(() => {
+      this.visible.set(false);
+      this.hideTimeoutId = null;
+    }, 500);
+  }
+
+  @HostListener('document:mouseleave')
+  onMouseLeave() {
+    this.visible.set(false);
+    this.pressed.set(false);
+  }
+
+  @HostListener('document:mousedown')
+  onMouseDown() {
+    this.pressed.set(true);
+  }
+
+  @HostListener('document:mouseup')
+  onMouseUp() {
+    this.pressed.set(false);
+  }
+}
+  </code></pre>
+
+  <h3>Template</h3>
+  <p>
+    Le template lie la position du curseur et ajoute des classes CSS pour
+    la visibilité (<code>cursor--hidden</code>) et l’état pressé
+    (<code>cursor--pressed</code>).
+  </p>
+
+  <pre><code class="language-html">
+<!-- src/app/components/custom-cursor/custom-cursor.component.html -->
+
+&lt;div
+  class="cursor"
+  [class.cursor--hidden]="!visible()"
+  [class.cursor--pressed]="pressed()"
+  [style.left.px]="x()"
+  [style.top.px]="y()"
+&gt;&lt;/div&gt;
+  </code></pre>
+
+  <h3>Styles et design</h3>
+  <p>
+    Le design visuel est entièrement défini dans le fichier SCSS. Le curseur
+    utilise la couleur d’accent via <code>var(--accent-color)</code>.
+    C’est ici que l’on ajuste la taille, le contour et les transitions.
+  </p>
+
+  <pre><code class="language-scss">
+// src/app/components/custom-cursor/custom-cursor.component.scss
+
+.cursor {
+  position: fixed;
+  width: 28px;          // taille normale
+  height: 28px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: 1.5px solid var(--accent-color);  // contour couleur d'accent
+  z-index: 9999;
+  opacity: 1;
+  transition:
+    left 0.12s ease-out,  // déplacement fluide
+    top 0.12s ease-out,
+    border-color 0.15s ease-out,
+    opacity 0.15s ease-out;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;          // point intérieur
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cursor--hidden {
+  opacity: 0;           // fondu quand inactif / hors de la fenêtre
+}
+
+.cursor--pressed {
+  width: 42px;          // cercle plus grand au clic
+  height: 42px;
+  border-width: 0;
+  background-color: var(--accent-color); // rempli avec la couleur d'accent
+  opacity: 0.5;         // opacité 50 %
+
+  &::after {
+    width: 0;           // on cache le point intérieur en mode pressé
+    height: 0;
+  }
+}
+  </code></pre>
+
+  <h3>Comment modifier le design</h3>
+  <ul>
+    <li>
+      <strong>Taille</strong> :
+      modifier <code>width</code> / <code>height</code> dans
+      <code>.cursor</code> (état normal) et
+      <code>.cursor--pressed</code> (état cliqué).
+    </li>
+    <li>
+      <strong>Contour</strong> :
+      adapter <code>border: 1.5px solid var(--accent-color)</code> dans
+      <code>.cursor</code>.
+    </li>
+    <li>
+      <strong>Point intérieur</strong> :
+      ajuster le bloc <code>&amp;::after</code> dans <code>.cursor</code>
+      (taille et couleur).
+    </li>
+    <li>
+      <strong>Remplissage / opacité au clic</strong> :
+      modifier <code>background-color</code> et <code>opacity</code> dans
+      <code>.cursor--pressed</code>.
+    </li>
+    <li>
+      <strong>Fluidité du mouvement</strong> :
+      ajuster la durée et l’easing des transitions <code>left/top</code>
+      dans la propriété <code>transition</code> de <code>.cursor</code>.
+    </li>
+  </ul>
+</section>
+
+
+<h3>Rotate circle</h3>
+<p>
+  <strong>Agrandir / réduire le cercle :</strong><br>
+  Fichier : <code>src/app/sections/home/home-header/home-header.component.scss</code><br>
+  Ligne : règle <code>.home-header__badge-inner</code><br>
+  Propriété : modifier <code>width</code> et <code>height</code> (ex. <code>200px</code>).
+</p>
+
+<p>
+  <strong>Agrandir / réduire le texte dans le cercle :</strong><br>
+  Fichier : <code>src/app/sections/home/home-header/home-header.component.scss</code><br>
+  Ligne : règle <code>.home-header__badge-text</code><br>
+  Propriétés : modifier <code>font-size</code> (taille du texte) et
+  éventuellement <code>letter-spacing</code> (espacement des lettres).
+</p>
+
+  </body>
+</html>
+

@@ -1,0 +1,139 @@
+.portfolio-panel {
+
+  width: 65%;
+  margin-inline: auto;
+  background: var(--shell-content-bg);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  animation: fadeSlide 320ms var(--timing-standard) both;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__category {
+    margin: 0;
+    letter-spacing: 0.3em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-color);
+  }
+
+  &__summary {
+    margin: 0;
+    font-size: 1.05rem;
+    opacity: 0.85;
+  }
+
+  &__projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+    
+}
+
+.portfolio-project {
+  display: grid;
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: var(--shell-content-alt-bg);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  &__media img {
+    width: 100%;
+    border-radius: 0.9rem;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+
+  &__role {
+    font-weight: 600;
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  &__stack-badge {
+    padding: 0.15rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.35rem;
+  }
+
+  &__description {
+    margin: 0;
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  &__cta {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: var(--accent-color);
+    color: #0f172a;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .portfolio-project {
+    grid-template-columns: 1fr;
+  }
+}

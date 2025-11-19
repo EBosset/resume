@@ -1,0 +1,43 @@
+<div class="portfolio-panel" *ngIf="discipline">
+  <div class="portfolio-panel__header">
+    <p class="portfolio-panel__category">{{ discipline.label | uppercase }}</p>
+    <p class="portfolio-panel__summary">{{ discipline.summary }}</p>
+  </div>
+
+  <div class="portfolio-panel__projects">
+    @for (project of discipline.projects; track project.id) {
+      <article class="portfolio-project">
+        <div class="portfolio-project__media">
+          <img
+            [src]="project.imageUrl"
+            [alt]="project.title"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="portfolio-project__body">
+          <div class="portfolio-project__meta">
+            <span class="portfolio-project__role">{{ project.role }}</span>
+            <span class="portfolio-project__stack">
+              @for (tech of project.stack; track tech) {
+                <span class="portfolio-project__stack-badge">{{ tech }}</span>
+              }
+            </span>
+          </div>
+
+          <h3 class="portfolio-project__title">{{ project.title }}</h3>
+          <p class="portfolio-project__description">{{ project.description }}</p>
+
+          <a
+            class="portfolio-project__cta"
+            [href]="project.link"
+            target="_blank"
+            rel="noopener"
+          >
+            Voir le projet
+          </a>
+        </div>
+      </article>
+    }
+  </div>
+</div>

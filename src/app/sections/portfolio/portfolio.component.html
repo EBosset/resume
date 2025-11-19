@@ -1,6 +1,28 @@
 <section class="section section--portfolio">
   <header class="section__header">
     <h2 class="section__title">Portfolio</h2>
+    <p class="section__subtitle">
+      Sélection de projets selon mes différents rôles : graphiste, webdesigner, développeuse web et UI/UX.
+    </p>
   </header>
-  <!-- Contenu du portfolio viendra ici -->
+
+  <div class="portfolio-tabs">
+    @for (discipline of disciplines; track discipline.id) {
+      <button
+        type="button"
+        class="portfolio-tab"
+        [class.portfolio-tab--active]="isActive(discipline.id)"
+        (click)="select(discipline.id)"
+      >
+        {{ discipline.label }}
+      </button>
+    }
+  </div>
+
+  <div class="portfolio-content">
+    <app-portfolio-content-panel
+      [discipline]="selectedDiscipline()"
+    ></app-portfolio-content-panel>
+  </div>
 </section>
+```__
