@@ -115,6 +115,49 @@ body * {
   cursor: none;
 }
 
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, 1rem);
+}
+
+.stack--tight {
+  --stack-gap: 0.5rem;
+}
+
+.stack--loose {
+  --stack-gap: 1.75rem;
+}
+
+.card-shell {
+  padding: var(--card-padding, 1.25rem 1.5rem);
+  border-radius: var(--card-radius, 1rem);
+  background: var(--card-bg, var(--shell-content-bg));
+  border: 1px solid var(--card-border-color, rgba(148, 163, 184, 0.35));
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.card-shell--alt {
+  background: var(--shell-content-alt-bg);
+}
+
+.hover-lift {
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
 /* Scrollbar globale */
 ::-webkit-scrollbar {
   width: 10px;          

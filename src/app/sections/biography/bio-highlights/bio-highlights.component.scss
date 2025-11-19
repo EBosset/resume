@@ -1,35 +1,25 @@
 .bio-highlights {
+  @extend .card;
+  @extend .stack;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.25rem;
   padding: 1.25rem 0;
-  
 }
 
 .bio-highlight {
-  padding: 1.25rem 1.5rem;
-  border-radius: 1rem;
-  background: var(--shell-content-bg);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  @extend .card;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 
   &__label {
-    margin: 0;
-    font-size: 0.8rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 600;
+    @extend .eyebrow;
   }
 
   &__description {
     margin: 0;
     line-height: 1.6;
     opacity: 0.9;
-  }
-  &:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent-color);
   }
 }

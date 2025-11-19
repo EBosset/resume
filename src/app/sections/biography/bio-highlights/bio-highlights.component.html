@@ -1,7 +1,7 @@
 <div class="bio-highlights">
   @for (highlight of highlights; track highlight.id) {
-    <article class="bio-highlight">
-      <p class="bio-highlight__label">{{ highlight.label }}</p>
+    <article class="bio-highlight card-shell hover-lift stack stack--tight">
+      <p class="bio-highlight__label eyebrow">{{ highlight.label }}</p>
       <p class="bio-highlight__description">{{ highlight.description }}</p>
     </article>
   }
