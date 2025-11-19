@@ -6,10 +6,11 @@ export interface PortfolioProject {
   stack: string[];
   imageUrl: string;
   link: string;
+  gallery?: string[];
 }
 
 export interface PortfolioDiscipline {
-  id: 'graphiste' | 'webdesigner' | 'dev-web' | 'ui-ux';
+  id: 'artiste-plasticienne' | 'webdesigner' | 'dev-web' | 'ui-ux';
   label: string;
   summary: string;
   projects: PortfolioProject[];
@@ -17,36 +18,8 @@ export interface PortfolioDiscipline {
 
 export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
   {
-    id: 'graphiste',
-    label: 'Graphiste',
-    summary:
-      'Identités visuelles, décors sur mesure et supports imprimés ou physiques pour des marques et ateliers.',
-    projects: [
-      {
-        id: 'graphiste-atelier-ceramique',
-        title: 'Atelier Terre & Couleurs',
-        description:
-          'Décors de céramique, packagings et supports print cohérents pour une collection capsule artisanale.',
-        role: 'Direction artistique & illustrations',
-        stack: ['Illustrator', 'Procreate', 'InDesign'],
-        imageUrl: '/assets/portfolio/graphiste-atelier.jpg',
-        link: 'https://www.behance.net/',
-      },
-      {
-        id: 'graphiste-branding-salon',
-        title: 'Identité pour salon créatif',
-        description:
-          'Création d’un univers graphique complet (logo, signalétique, goodies textile) pour un événement local.',
-        role: 'Branding & déclinaisons print',
-        stack: ['Illustrator', 'Photoshop'],
-        imageUrl: '/assets/portfolio/graphiste-salon.jpg',
-        link: 'https://www.behance.net/',
-      },
-    ],
-  },
-  {
     id: 'webdesigner',
-    label: 'Webdesigner',
+    label: 'Webdesign',
     summary:
       'Maquettes hautement convertissantes, orientées storytelling et optimisation des parcours utilisateurs.',
     projects: [
@@ -59,6 +32,11 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         stack: ['Figma', 'FigJam'],
         imageUrl: '/assets/portfolio/webdesigner-saas.jpg',
         link: 'https://www.behance.net/',
+        gallery: [
+          '/assets/portfolio/webdesigner-saas.jpg',
+          '/assets/portfolio/webdesigner-saas-wireframe.jpg',
+          '/assets/portfolio/webdesigner-saas-mobile.jpg',
+        ],
       },
       {
         id: 'webdesigner-agence',
@@ -69,34 +47,11 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         stack: ['Figma', 'After Effects'],
         imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
         link: 'https://www.behance.net/',
-      },
-    ],
-  },
-  {
-    id: 'dev-web',
-    label: 'Développeuse Web',
-    summary:
-      'Intégration front-end moderne (Angular, animations accessibles, performance) sur projets sur-mesure.',
-    projects: [
-      {
-        id: 'devweb-dashboard',
-        title: 'Dashboard analytique',
-        description:
-          'Composants Angular standalone, charts dynamiques et theming custom pour une plateforme analytique.',
-        role: 'Développement front & design system',
-        stack: ['Angular', 'RxJS', 'Nx'],
-        imageUrl: '/assets/portfolio/dev-dashboard.jpg',
-        link: 'https://github.com/',
-      },
-      {
-        id: 'devweb-ecommerce',
-        title: 'Boutique artisanale',
-        description:
-          'Site e-commerce headless avec animations micro-interactions, paiement Stripe et gestion de paniers offline.',
-        role: 'Front-end lead',
-        stack: ['Angular', 'Stripe', 'SCSS'],
-        imageUrl: '/assets/portfolio/dev-boutique.jpg',
-        link: 'https://github.com/',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence-mobile.jpg',
+          '/assets/portfolio/webdesigner-agence-styleguide.jpg',
+        ],
       },
     ],
   },
@@ -115,6 +70,11 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         stack: ['Figma', 'Maze', 'Notion'],
         imageUrl: '/assets/portfolio/uiux-sante.jpg',
         link: 'https://www.behance.net/',
+        gallery: [
+          '/assets/portfolio/uiux-sante.jpg',
+          '/assets/portfolio/uiux-sante-flows.jpg',
+          '/assets/portfolio/uiux-sante-mobile.jpg',
+        ],
       },
       {
         id: 'uiux-banque',
@@ -125,6 +85,87 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         stack: ['Figma', 'Storybook'],
         imageUrl: '/assets/portfolio/uiux-banque.jpg',
         link: 'https://www.behance.net/',
+        gallery: [
+          '/assets/portfolio/uiux-banque.jpg',
+          '/assets/portfolio/uiux-banque-kit.jpg',
+          '/assets/portfolio/uiux-banque-mobile.jpg',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'dev-web',
+    label: 'Développement Web',
+    summary:
+      'Intégration front-end moderne (Angular, animations accessibles, performance) sur projets sur-mesure.',
+    projects: [
+      {
+        id: 'devweb-dashboard',
+        title: 'Dashboard analytique',
+        description:
+          'Composants Angular standalone, charts dynamiques et theming custom pour une plateforme analytique.',
+        role: 'Développement front & design system',
+        stack: ['Angular', 'RxJS', 'Nx'],
+        imageUrl: '/assets/portfolio/dev-dashboard.jpg',
+        link: 'https://github.com/',
+        gallery: [
+          '/assets/portfolio/dev-dashboard.jpg',
+          '/assets/portfolio/dev-dashboard-dark.jpg',
+          '/assets/portfolio/dev-dashboard-mobile.jpg',
+        ],
+      },
+      {
+        id: 'devweb-ecommerce',
+        title: 'Boutique artisanale',
+        description:
+          'Site e-commerce headless avec animations micro-interactions, paiement Stripe et gestion de paniers offline.',
+        role: 'Front-end lead',
+        stack: ['Angular', 'Stripe', 'SCSS'],
+        imageUrl: '/assets/portfolio/dev-boutique.jpg',
+        link: 'https://github.com/',
+        gallery: [
+          '/assets/portfolio/dev-boutique.jpg',
+          '/assets/portfolio/dev-boutique-product.jpg',
+          '/assets/portfolio/dev-boutique-checkout.jpg',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'artiste-plasticienne',
+    label: 'Arts plastiques',
+    summary:
+      'Décors peints, fresques, installations artisanales et identités visuelles appliquées à des supports physiques.',
+    projects: [      
+      {
+        id: 'plasticienne-branding-salon',
+        title: 'Identité pour salon créatif',
+        description:
+          'Création d’un univers graphique complet (logo, signalétique, goodies textile) pour un événement local.',
+        role: 'Branding & déclinaisons print',
+        stack: ['Illustrator', 'Photoshop'],
+        imageUrl: '/assets/portfolio/graphiste-salon.jpg',
+        link: 'https://www.behance.net/',
+        gallery: [
+          '/assets/portfolio/graphiste-salon.jpg',
+          '/assets/portfolio/graphiste-salon-detail-1.jpg',
+          '/assets/portfolio/graphiste-salon-detail-2.jpg',
+        ],
+      },
+      {
+        id: 'plasticienne-atelier-ceramique',
+        title: 'Atelier Terre & Pixels',
+        description:
+          'Logo & charte Graphique, identité visuelle.',
+        role: 'Direction artistique & design',
+        stack: ['Illustrator', 'InDesign'],
+        imageUrl: '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique.png',
+        link: 'https://www.behance.net/',
+        gallery: [
+          '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique.png',
+          '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique-2.png',
+          '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique-3.png',
+        ],
       },
     ],
   },

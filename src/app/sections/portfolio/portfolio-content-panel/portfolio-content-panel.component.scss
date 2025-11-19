@@ -49,12 +49,46 @@
   background: var(--shell-content-alt-bg);
   border: 1px solid rgba(148, 163, 184, 0.25);
 
-  &__media img {
+  &__media {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__media-main img {
     width: 100%;
     border-radius: 0.9rem;
     display: block;
     object-fit: cover;
     aspect-ratio: 4 / 3;
+  }
+
+  &__media-thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__thumb {
+    all: unset;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.5rem;
+    padding: 0.15rem;
+    transition: border-color 160ms ease, transform 160ms ease;
+
+    img {
+      display: block;
+      width: 64px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 0.35rem;
+    }
+
+    &--active {
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
   }
 
   &__body {

@@ -49,9 +49,9 @@
 }
 
 .section__inner {
-  max-width: 1400px;   // même largeur que .section__header
+  max-width: 1350px;   
   margin: 0 auto;
-  padding: 0 2rem;     // même retrait gauche/droite que le titre
+  padding: 0 2rem;    
 }
 
 .section__inner--wide {
@@ -117,11 +117,7 @@
   background-color: var(--shell-content-bg);
 }
 
-.section__inner {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 3rem;
-}
+
 
 .section--alt {
   background-color: var(--shell-content-alt-bg);

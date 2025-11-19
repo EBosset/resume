@@ -8,11 +8,28 @@
     @for (project of discipline.projects; track project.id) {
       <article class="portfolio-project">
         <div class="portfolio-project__media">
-          <img
-            [src]="project.imageUrl"
-            [alt]="project.title"
-            loading="lazy"
-          />
+          <div class="portfolio-project__media-main">
+            <img
+              [src]="activeImage(project)"
+              [alt]="project.title"
+              loading="lazy"
+            />
+          </div>
+
+          @if (project.gallery?.length) {
+            <div class="portfolio-project__media-thumbs">
+              @for (thumb of project.gallery; track thumb) {
+                <button
+                  type="button"
+                  class="portfolio-project__thumb"
+                  [class.portfolio-project__thumb--active]="activeImage(project) === thumb"
+                  (click)="selectImage(project.id, thumb)"
+                >
+                  <img [src]="thumb" [alt]="project.title + ' vignette'" />
+                </button>
+              }
+            </div>
+          }
         </div>
 
         <div class="portfolio-project__body">
@@ -28,6 +45,7 @@
           <h3 class="portfolio-project__title">{{ project.title }}</h3>
           <p class="portfolio-project__description">{{ project.description }}</p>
 
+          <!--
           <a
             class="portfolio-project__cta"
             [href]="project.link"
@@ -36,6 +54,7 @@
           >
             Voir le projet
           </a>
+          -->
         </div>
       </article>
     }

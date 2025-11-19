@@ -6,7 +6,7 @@
   gap: 0.75rem;
   padding: 1.25rem 1.5rem;
   border-radius: 1rem;
-  background: var(--shell-content-bg);      // <-- couleur de la section « normale »
+  background: var(--shell-content-bg);      
   border: 1px solid rgba(148, 163, 184, 0.35);
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
   min-height: 300px;
@@ -31,8 +31,7 @@
   font-size: 1rem;
   line-height: 1.7;
   opacity: 0.85;
-  text-align: left;
-  white-space: pre-line;  // ← important
+  text-align: left;  
 }
 
 .service-card__header {
@@ -65,7 +64,7 @@
 }
 
 .service-card:hover .service-card__icon {
-  transform: translateY(-30px) scale(1.6);  // sort franchement de la card
+  transform: translateY(-30px) scale(1.6);  // sort de la card
   text-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
 

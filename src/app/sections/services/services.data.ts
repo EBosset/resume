@@ -4,59 +4,48 @@ export interface ServiceItem {
   shortDescription: string;
   imageUrl: string;
   content: string;
-  icon: string; // Angular Material icon name
+  icon: string;
 }
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'graphiste',
-    title: 'Graphiste',
-    shortDescription: `Conception de visuels forts pour votre marque et votre communication, création de décors sur tous types de supports.`,
-    imageUrl: '/assets/services/graphiste.jpg',
-    content: `
-Je conçois des visuels qui traduisent l’ADN de votre marque : affiches, flyers, bannières, visuels pour les réseaux sociaux, supports print ou digitaux. J’interviens également sur la réalisation de décors : motifs et compositions appliqués à différents supports (céramique, toiles, murs, objets…).
-
-Je vous accompagne dans la construction d’un univers graphique cohérent : choix des couleurs, typographies, textures, compositions… afin que chaque support soit identifiable au premier regard et serve vos objectifs de communication.
-    `,
-    icon: 'brush',
-  },
-  {
-    id: 'webdesigner',
-    title: 'Webdesigner',
-    shortDescription: `Maquettes de sites et landing pages claires, modernes et orientées conversion.
-
-
-`,
+    id: 'webdesign',
+    title: 'Webdesign',
+    shortDescription: `Maquettes desktop & mobile, storytelling visuel et CTA optimisés pour guider vos visiteurs.`,
     imageUrl: '/assets/services/webdesign.jpg',
     content: `
-Je conçois l’architecture visuelle de vos pages web : structure des sections, hiérarchie des informations, mise en avant des messages clés et des appels à l’action.
-
-Mon objectif : des interfaces à la fois esthétiques et efficaces, qui guident naturellement l’utilisateur vers l’essentiel et favorisent l’engagement, sur desktop comme sur mobile.
+Je conçois l’architecture visuelle de vos pages : hiérarchie des informations, rythme des sections, traitements typographiques, CTA et variantes responsive. Je travaille vos messages clés (hero, bénéfices, social proof) pour créer des interfaces esthétiques, cohérentes avec votre identité et orientées conversion.
     `,
     icon: 'web',
   },
   {
+    id: 'ui-ux',
+    title: 'UI / UX',
+    shortDescription: `Recherche utilisateur, ateliers cadrage, prototypes interactifs et design systems scalables.`,
+    imageUrl: '/assets/services/ui-ux.jpg',
+    content: `
+J’accompagne vos projets depuis la phase d’exploration UX (interviews, parcours, wireframes) jusqu’à la définition d’un langage UI complet (bibliothèque de composants, états, micro-interactions). L’objectif : des expériences simples, accessibles et fidèles à votre marque, prêtes à être livrées au développement.
+    `,
+    icon: 'dashboard_customize',
+  },
+  {
     id: 'dev-web',
-    title: 'Développeuse Web',
-    shortDescription: 'Intégration et développement front-end modernes, adaptés à chaque projet.',
+    title: 'Développement Web',
+    shortDescription: `Intégration front-end moderne (Angular), animations maîtrisées, performance et accessibilité.`,
     imageUrl: '/assets/services/frontend.jpg',
     content: `
-J’intègre vos maquettes en front-end en choisissant les technologies les plus pertinentes selon le contexte (framework, outil ou stack existant), en veillant à la qualité du code, à la performance, au responsive et à l’accessibilité.
-
-Je développe des composants réutilisables, des micro‑interactions et des animations maîtrisées pour proposer une expérience fluide, cohérente et agréable à utiliser au quotidien.
+J’intègre vos maquettes en Angular ou en stack front équivalente, en privilégiant des composants standalone, un style system maintenable et des animations légères. Je veille aux performances, au responsive, à l’accessibilité et à la maintenabilité du code pour livrer une expérience fluide sur tous les supports.
     `,
     icon: 'code',
   },
   {
-    id: 'ui-ux',
-    title: 'UI / UX',
-    shortDescription: 'Conception d’expériences centrées utilisateur, des parcours aux interfaces finales.',
-    imageUrl: '/assets/services/ui-ux.jpg',
+    id: 'artiste-plasticienne',
+    title: 'Arts plastiques',
+    shortDescription: `Décors peints, fresques, signalétique artisanale et identités visuelles appliquées à vos supports.`,
+    imageUrl: '/assets/services/graphiste.jpg',
     content: `
-J’interviens sur la réflexion UX (parcours, scénarios, architecture de l’information, wireframes) et sur la couche UI (système de composants, états, micro‑interactions).
-
-L’objectif : concevoir des parcours simples et intuitifs, adaptés à vos utilisateurs et à vos contraintes, tout en mettant en valeur la personnalité de votre marque.
+Je crée des univers tangibles : fresques murales, vitrines, objets peints, textiles ou installations événementielles. J’assure également la direction artistique et la charte graphique associée pour garantir la cohérence entre vos supports physiques et digitaux, du motif à la scénographie complète.
     `,
-    icon: 'dashboard_customize',
+    icon: 'brush',
   },
 ];

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 
-import { PortfolioDiscipline } from '../portfolio.data';
+import { PortfolioDiscipline, PortfolioProject } from '../portfolio.data';
 
 @Component({
   selector: 'app-portfolio-content-panel',
@@ -12,4 +12,14 @@ import { PortfolioDiscipline } from '../portfolio.data';
 })
 export class PortfolioContentPanelComponent {
   @Input({ required: true }) discipline!: PortfolioDiscipline;
+
+  private readonly selectedImages = signal<Record<string, string>>({});
+
+  activeImage(project: PortfolioProject): string {
+    return this.selectedImages()[project.id] ?? project.imageUrl;
+  }
+
+  selectImage(projectId: string, image: string): void {
+    this.selectedImages.update((current) => ({ ...current, [projectId]: image }));
+  }
 }
