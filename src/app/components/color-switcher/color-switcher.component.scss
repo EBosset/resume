@@ -30,13 +30,13 @@
   position: fixed;
   top: 5%;
   right: 0.75rem;
-  background: #ffffff;        /* panneau blanc */
-  color: #111827;             /* texte foncé lisible */
+  background: var(--shell-panel-bg);
+  color: var(--shell-panel-text);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   border-radius: 0.75rem;
   padding: 1rem 1.25rem 1.25rem;
   width: 190px;
-  z-index: 1000;
+  z-index: 1100;
 }
 
 .title {

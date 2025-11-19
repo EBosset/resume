@@ -3,8 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.25rem;
   padding: 1.25rem 0;
-  border-top: 1px solid rgba(148, 163, 184, 0.25);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  
 }
 
 .bio-highlight {
@@ -21,12 +20,16 @@
     font-size: 0.8rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--accent-color);
+    font-weight: 600;
   }
 
   &__description {
     margin: 0;
     line-height: 1.6;
     opacity: 0.9;
+  }
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
   }
 }

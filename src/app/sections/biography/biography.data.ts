@@ -31,7 +31,7 @@ export const BIOGRAPHY_HIGHLIGHTS: BiographyHighlight[] = [
   },
   {
     id: 'design-digital',
-    label: 'Design digital',
+    label: 'Design Web',
     description: 'Webdesign, UI/UX et intégration front pour des projets immersifs.',
   },
   {
@@ -55,16 +55,16 @@ export const BIOGRAPHY_SOFT_SKILLS: BiographySoftSkill[] = [
   {
     id: 'methodique',
     title: 'MÉTHODIQUE',
-    description: 'Process clair, documentation rigoureuse, sens du détail de l’artisan.',
+    description: 'Process clair, documentation rigoureuse, sens du détail.',
   },
   {
     id: 'team-player',
     title: 'ESPRIT D’ÉQUIPE',
-    description: 'Aime co-créer avec artisans, développeurs, PM et clients.',
+    description: 'Aime co-créer avec artisans, développeurs, PME et clients.',
   },
   {
     id: 'detail',
     title: 'SENS DU DÉTAIL',
-    description: 'Finitions soignées, du pinceau au pixel.',
+    description: 'Soin apporté aux moindres nuances, du pinceau au pixel.',
   },
 ];

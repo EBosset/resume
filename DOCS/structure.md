@@ -31,19 +31,26 @@ resume/
 │           ├── services/
 │           │   ├── services.component.* · liste + gestion du signal `selected`
 │           │   ├── services.data.ts · données des cartes (titre, shortDescription, contenu)
-│           │   ├── service-card/ · composant de carte clickable
+│           │   ├── service-card/ · composant de carte cliquable
 │           │   └── service-detail/ · composant détail (modale custom avec backdrop)
 │           ├── portfolio/
-│           │   ├── portfolio-section.* · section portfolio (placeholder pour future grille/onglets)
+│           │   ├── portfolio.component.* · section avec onglets + grille centrée
+│           │   ├── portfolio.data.ts · projets (disciplines, médias)
+│           │   └── portfolio-content-panel/ · affichage d’un projet (media + meta + CTA)
 │           ├── biography/
-│           │   └── biography.component.* · texte narratif (utilise `.section__header` + `.section__inner`)
+│           │   ├── biography.component.* · orchestrateur de la section biographie
+│           │   ├── bio-intro/ · introduction narrative (visuels, sous-titre)
+│           │   ├── bio-highlights/ · liste des points clés (badges, timeline courte)
+│           │   └── bio-soft-skills/ · texte + SVG « soft skills » (HTTP load + DomSanitizer)
 │           └── contact/
 │               └── contact.component.* · CTA/contact info (formulaire léger)
+│       ├── types/
+│       │   └── svg-raw.d.ts · déclaration de modules pour importer des SVG bruts
+│       └── sections/
 ├── angular.json / tsconfig*.json · configuration Angular CLI & TypeScript
 ├── package.json / package-lock.json · dépendances (Angular 17, Angular Material…)
 ├── README.md · instructions projet
 └── .editorconfig / .vscode/ · configuration d’éditeur
-```
 
 ## Notes supplémentaires
 
