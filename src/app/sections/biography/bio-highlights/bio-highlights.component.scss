@@ -5,10 +5,21 @@
   padding: 1.25rem 0;
 }
 
+@media (max-width: 640px) {
+  .bio-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-highlight {
+    --card-padding: 0.85rem 1rem;
+  }
+}
+
 .bio-highlight {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  --card-padding: 1rem 1.35rem;
 
   &__label {
     color: var(--shell-panel-text);

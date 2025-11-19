@@ -17,11 +17,12 @@
 }
 
 .bio-soft__illustration {
-  width: 50%;
+  width: 40%;
   aspect-ratio: 4 / 5;
   border-radius: 1.5rem;
   padding: 1.5rem;
   color: var(--accent-color); 
+  margin: 0 auto;
 
   svg {
     width: 100%;
@@ -127,7 +128,9 @@
 
 @media (max-width: 768px) {
   .bio-soft__illustration{
-    width:100%;
+    width: 60%;
+    max-width: 260px;
+    margin: 0 auto;
   }
   
 }

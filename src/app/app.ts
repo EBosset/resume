@@ -38,6 +38,9 @@ export class App {
   protected readonly activeSection = signal<'home' | 'biography' | 'services' | 'portfolio' | 'contact'>('home');
   protected readonly isMobile = signal(window.innerWidth <= 768);
   protected readonly isMobileMenuOpen = signal(false);
+  protected readonly showBackToTop = signal(false);
+  private contentScrollTop = 0;
+  private scrollHostElement?: HTMLElement;
 
   scrollToSection(sectionId: 'home' | 'biography' | 'services' | 'portfolio' | 'contact'): void {
     this.activeSection.set(sectionId);
@@ -66,6 +69,18 @@ export class App {
     this.isMobileMenuOpen.set(false);
   }
 
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.scrollHostElement?.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  onContentScroll(event: Event): void {
+    const target = event.target as HTMLElement | null;
+    this.scrollHostElement = target ?? this.scrollHostElement;
+    this.contentScrollTop = target?.scrollTop ?? 0;
+    this.updateBackToTopVisibility();
+  }
+
   @HostListener('window:resize')
   onWindowResize(): void {
     const mobile = window.innerWidth <= 768;
@@ -73,5 +88,15 @@ export class App {
     if (!mobile) {
       this.isMobileMenuOpen.set(false);
     }
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.updateBackToTopVisibility();
+  }
+
+  private updateBackToTopVisibility(): void {
+    const scrollTop = Math.max(window.scrollY, this.contentScrollTop);
+    this.showBackToTop.set(scrollTop > 400);
   }
 }

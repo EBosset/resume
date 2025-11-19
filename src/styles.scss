@@ -1,4 +1,3 @@
-
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
@@ -25,6 +24,10 @@ html {
   --shell-panel-bg: #0b0b0f;   // fond par défaut des panneaux (sidenav, header mobile, etc.)
   --shell-panel-text: #f9fafb; // texte par défaut sur ces panneaux
   --shell-content-bg: #262626; // fond par défaut de la zone de contenu
+}
+
+.text-preline {
+  white-space: pre-line;
 }
 
 .section__header {

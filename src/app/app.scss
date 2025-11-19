@@ -149,11 +149,39 @@ body.theme-light .shell__sidenav a {
   text-decoration: none;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 2px solid var(--accent-color);
+  background: var(--shell-panel-bg);
+  color: var(--shell-panel-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  z-index: 1200;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+}
+
 @media (max-width: 768px) {
 
 
   .section {
     min-height: auto;
+  }
+  .section__inner,
+  .section__inner--wide {
+    padding: 0 1rem;
   }
   .shell {
     height: calc(100vh - 56px);

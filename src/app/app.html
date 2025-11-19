@@ -92,7 +92,7 @@
 </div>
   </mat-sidenav>
 
-  <mat-sidenav-content class="shell__content">
+  <mat-sidenav-content class="shell__content" (scroll)="onContentScroll($event)">
     <main class="sections">
        
           <section id="home" 
@@ -146,6 +146,16 @@
     </main>
     <app-theme-toggle></app-theme-toggle>
     <app-color-switcher></app-color-switcher>
+    @if (showBackToTop()) {
+      <button
+        type="button"
+        class="back-to-top"
+        aria-label="Revenir en haut"
+        (click)="scrollToTop()"
+      >
+        <mat-icon>arrow_upward</mat-icon>
+      </button>
+    }
   </mat-sidenav-content>
 </mat-sidenav-container>
 
