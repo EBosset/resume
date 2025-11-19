@@ -11,19 +11,22 @@ export const SERVICES: ServiceItem[] = [
   {
     id: 'graphiste',
     title: 'Graphiste',
-    shortDescription: 'Création de visuels forts pour votre identité et vos supports de communication.',
+    shortDescription: `Conception de visuels forts pour votre marque et votre communication, création de décors sur tous types de supports.`,
     imageUrl: '/assets/services/graphiste.jpg',
     content: `
-Je conçois des visuels qui traduisent l’ADN de votre marque : affiches, flyers, bannières, visuels pour les réseaux sociaux, supports print ou digitaux.
+Je conçois des visuels qui traduisent l’ADN de votre marque : affiches, flyers, bannières, visuels pour les réseaux sociaux, supports print ou digitaux. J’interviens également sur la réalisation de décors : motifs et compositions appliqués à différents supports (céramique, toiles, murs, objets…).
 
-Je vous accompagne sur la construction d’un univers graphique cohérent : choix des couleurs, typographies, textures, compositions… afin que chaque support soit identifiable au premier regard et serve vos objectifs de communication.
+Je vous accompagne dans la construction d’un univers graphique cohérent : choix des couleurs, typographies, textures, compositions… afin que chaque support soit identifiable au premier regard et serve vos objectifs de communication.
     `,
     icon: 'brush',
   },
   {
     id: 'webdesigner',
     title: 'Webdesigner',
-    shortDescription: 'Maquettes de sites et landing pages claires, modernes et orientées conversion.',
+    shortDescription: `Maquettes de sites et landing pages claires, modernes et orientées conversion.
+
+
+`,
     imageUrl: '/assets/services/webdesign.jpg',
     content: `
 Je conçois l’architecture visuelle de vos pages web : structure des sections, hiérarchie des informations, mise en avant des messages clés et des appels à l’action.
