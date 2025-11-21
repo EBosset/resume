@@ -1,3 +1,5 @@
+import de from "@angular/common/locales/de";
+
 export interface PortfolioProject {
   id: string;
   title: string;
@@ -5,55 +7,37 @@ export interface PortfolioProject {
   role: string;
   stack: string[];
   imageUrl: string;
-  link: string;
+  link?: string;
   gallery?: string[];
 }
 
 export interface PortfolioDiscipline {
   id: 'artiste-plasticienne' | 'webdesigner' | 'dev-web' | 'ui-ux';
   label: string;
-  summary: string;
+  summary?: string;
   projects: PortfolioProject[];
 }
-
-const PORTFOLIO_ASSETS = [
-  '/assets/portfolio/atelier-inclusion-sociale-artisanat-et-numerique.png',
-  '/assets/portfolio/webdesigner-agence.jpg',
-  '/assets/portfolio/webdesigner-saas.jpg',
-  '/assets/portfolio/webdesigner-saas-wireframe.jpg',
-  '/assets/portfolio/webdesigner-saas-mobile.jpg',
-];
-
-const randomAsset = (): string =>
-  PORTFOLIO_ASSETS[Math.floor(Math.random() * PORTFOLIO_ASSETS.length)];
-
-const buildGallery = (size = 3): string[] =>
-  Array.from({ length: size }, () => randomAsset());
-
-const randomMedia = (size?: number) => {
-  const gallery = buildGallery(size);
-  return {
-    imageUrl: gallery[0],
-    gallery,
-  } satisfies Pick<PortfolioProject, 'imageUrl' | 'gallery'>;
-};
 
 export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
   {
     id: 'webdesigner',
     label: 'Webdesign',
-    summary:
-      'Maquettes hautement convertissantes, orientées storytelling et optimisation des parcours utilisateurs.',
+    summary:'',
     projects: [
       {
-        id: 'webdesigner-saas',
-        title: 'Landing SaaS Fintech',
+        id: 'charte-atelier',
+        title: 'Charte graphique – Atelier',
         description:
-          'Structure modulaire, sections storytelling et CTA clairs pour une solution SaaS B2B.',
-        role: 'Wireframes + UI haute-fidélité',
-        stack: ['Figma', 'FigJam'],
-        link: 'https://www.behance.net/',
-        ...randomMedia(),
+          'Création de l’identité visuelle et de l’univers graphique d’un atelier associant savoir-faire artisanal et outils numériques.\n \n Travail réalisé en amont du lancement du projet : logo, palette de couleurs, typographie, images et visuels divers, '
+          +'hiérarchie des visuels, présentation de la marque.',
+        role: 'Logo + Charte graphique',
+        stack: ['Illustrator', 'InDesign'],
+        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
       },
       {
         id: 'webdesigner-agence',
@@ -62,8 +46,13 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Refonte complète avec hero immersif, carrousel projets et formulaire multi-étapes.',
         role: 'UI design & prototype interactif',
         stack: ['Figma', 'After Effects'],
-        link: 'https://www.behance.net/',
-        ...randomMedia(),
+        link: '',
+        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
       },
     ],
   },
@@ -71,27 +60,37 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
     id: 'ui-ux',
     label: 'UI / UX',
     summary:
-      'Recherche utilisateur, prototypes interactifs et design systems scalables pour produits digitaux.',
+      '',
     projects: [
       {
-        id: 'uiux-app-sante',
-        title: 'Application santé',
+        id: 'uiux-app-plantes',
+        title: 'UI Design — App interne Formation',
         description:
-          'Sprint UX, user journey et UI inclusive pour une app de suivi patient multi-profils.',
-        role: 'UX research + UI kit',
-        stack: ['Figma', 'Maze', 'Notion'],
-        link: 'https://www.behance.net/',
-        ...randomMedia(),
+          'Application destinée aux étudiants d’une école de formation (accès restreint, pas d’accès public).\n\n Conception UI complète des écrans clés, design system mobile, composants interactifs et maquettes haute fidélité.',
+        role: 'UI kit',
+        stack: ['Adobe XD', 'Illustrator'],
+        link: '',
+        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
       },
       {
-        id: 'uiux-banque',
-        title: 'Portail bancaire selfcare',
+        id: 'uiux-dating',
+        title: 'Application de rencontre (pré-lancement)',
         description:
-          'Ateliers co-design, tests utilisateurs et bibliothèque de composants responsive.',
+          'Création des user flows, wireframes et maquettes UI pour l’onboarding et la messagerie.',
         role: 'Lead UX/UI',
-        stack: ['Figma', 'Storybook'],
-        link: 'https://www.behance.net/',
-        ...randomMedia(),
+        stack: ['Adobe XD', 'Illustrator'],
+        link: '',
+        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
       },
     ],
   },
@@ -99,17 +98,22 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
     id: 'dev-web',
     label: 'Développement Web',
     summary:
-      'Intégration front-end moderne (Angular, animations accessibles, performance) sur projets sur-mesure.',
+      '',
     projects: [
       {
-        id: 'devweb-dashboard',
-        title: 'Dashboard analytique',
+        id: 'devweb-angular',
+        title: 'Application Materia Medica',
         description:
-          'Composants Angular standalone, charts dynamiques et theming custom pour une plateforme analytique.',
-        role: 'Développement front & design system',
-        stack: ['Angular', 'RxJS', 'Nx'],
-        link: 'https://github.com/',
-        ...randomMedia(),
+          'Application destinée aux étudiants d’une école de formation (accès restreint, via un lien d’invitation).\n \n Cette application permet de filtrer les plantes par différentes propriétés (famille, principes actifs, parties de la plante, constituants….etc).\n \nSéparation claire frontend/backend\nSystème d’authentification utilisateur\nTableau de bord admin\nRôles',
+        role: 'Développement Front End',
+        stack: ['Angular','TypeScript','RxJS','standalone components'],
+        link: '',
+        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
       },
       {
         id: 'devweb-ecommerce',
@@ -119,7 +123,12 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Front-end lead',
         stack: ['Angular', 'Stripe', 'SCSS'],
         link: 'https://github.com/',
-        ...randomMedia(),
+        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
       },
     ],
   },
@@ -127,17 +136,22 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
     id: 'artiste-plasticienne',
     label: 'Arts plastiques',
     summary:
-      'Décors peints, fresques, installations artisanales et identités visuelles appliquées à des supports physiques.',
+      '',
     projects: [      
       {
         id: 'plasticienne-branding-salon',
-        title: 'Identité pour salon créatif',
+        title: 'Décor pour l’entreprise Galtié',
         description:
-          'Création d’un univers graphique complet (logo, signalétique, goodies textile) pour un événement local.',
-        role: 'Branding & déclinaisons print',
-        stack: ['Illustrator', 'Photoshop'],
+          'Création d’un décor céramique complet, et application sur différentes pièces.',
+        role: 'Recherches techniques, création & application',
+        stack: ['Art', 'créativité', 'technique'],
         link: 'https://www.behance.net/',
-        ...randomMedia(),
+        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
       },
       {
         id: 'plasticienne-atelier-ceramique',
@@ -147,7 +161,12 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Direction artistique & design',
         stack: ['Illustrator', 'InDesign'],
         link: 'https://www.behance.net/',
-        ...randomMedia(),
+        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        gallery: [
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
       },
     ],
   },
