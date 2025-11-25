@@ -15,11 +15,24 @@ export class PortfolioContentPanelComponent {
 
   private readonly selectedImages = signal<Record<string, string>>({});
 
+  readonly lightboxImage = signal<string | null>(null);
+  readonly lightboxAlt = signal<string>('');
+
   activeImage(project: PortfolioProject): string {
     return this.selectedImages()[project.id] ?? project.imageUrl;
   }
 
   selectImage(projectId: string, image: string): void {
     this.selectedImages.update((current) => ({ ...current, [projectId]: image }));
+  }
+
+  openLightbox(image: string, alt: string): void {
+    this.lightboxImage.set(image);
+    this.lightboxAlt.set(alt);
+  }
+
+  closeLightbox(): void {
+    this.lightboxImage.set(null);
+    this.lightboxAlt.set('');
   }
 }

@@ -32,7 +32,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           +'hiérarchie des visuels, présentation de la marque.',
         role: 'Logo + Charte graphique',
         stack: ['Illustrator', 'InDesign'],
-        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        imageUrl: '/assets/portfolio/charte-graphique-atelier-terre-pixel.png',
         gallery: [
           '/assets/portfolio/webdesigner-agence.jpg',
           '/assets/portfolio/webdesigner-agence.jpg',
@@ -70,9 +70,9 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'UI kit',
         stack: ['Adobe XD', 'Illustrator'],
         link: '',
-        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        imageUrl: '/assets/portfolio/design-composants-application-materia-medica.jpg',
         gallery: [
-          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/design-composants-application-materia-medica.jpg',
           '/assets/portfolio/webdesigner-agence.jpg',
           '/assets/portfolio/webdesigner-agence.jpg',
         ],
@@ -108,7 +108,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Développement Front End',
         stack: ['Angular','TypeScript','RxJS','standalone components'],
         link: '',
-        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        imageUrl: '/assets/portfolio/materiamedica-application-base-de-donnes-plantes.png',
         gallery: [
           '/assets/portfolio/webdesigner-agence.jpg',
           '/assets/portfolio/webdesigner-agence.jpg',
