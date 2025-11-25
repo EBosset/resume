@@ -13,6 +13,7 @@
               [src]="activeImage(project)"
               [alt]="project.title"
               loading="lazy"
+              (click)="openLightbox(activeImage(project), project.title)"
             />
           </div>
 
@@ -58,5 +59,26 @@
         </div>
       </article>
     }
+  </div>
+  <div
+    class="portfolio-lightbox"
+    *ngIf="lightboxImage() as image"
+    (click)="closeLightbox()"
+  >
+    <div class="portfolio-lightbox__content" (click)="$event.stopPropagation()">
+      <img
+        [src]="image"
+        [alt]="lightboxAlt()"
+        (contextmenu)="$event.preventDefault()"
+        loading="lazy"
+      />
+      <button
+        type="button"
+        class="portfolio-lightbox__close"
+        (click)="closeLightbox(); $event.stopPropagation()"
+      >
+        ×
+      </button>
+    </div>
   </div>
 </div>
