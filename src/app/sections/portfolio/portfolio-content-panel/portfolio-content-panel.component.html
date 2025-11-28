@@ -65,11 +65,21 @@
     *ngIf="lightboxImage() as image"
     (click)="closeLightbox()"
   >
-    <div class="portfolio-lightbox__content" (click)="$event.stopPropagation()">
+    <div
+      class="portfolio-lightbox__content"
+      (click)="$event.stopPropagation()"
+      (wheel)="onLightboxWheel($event)"
+      (mousedown)="onLightboxMouseDown($event)"
+      (mousemove)="onLightboxMouseMove($event)"
+      (mouseup)="onLightboxMouseUp()"
+      (mouseleave)="onLightboxMouseLeave()"
+    >
       <img
         [src]="image"
         [alt]="lightboxAlt()"
         (contextmenu)="$event.preventDefault()"
+        [style.transform]="'translate(' + lightboxOffsetX() + 'px, ' + lightboxOffsetY() + 'px) scale(' + lightboxZoom() + ')'"
+        style="transform-origin: center center;"
         loading="lazy"
       />
       <button
