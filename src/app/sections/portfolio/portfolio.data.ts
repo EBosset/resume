@@ -32,9 +32,9 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           +'hiérarchie des visuels, présentation de la marque.',
         role: 'Logo + Charte graphique',
         stack: ['Illustrator', 'InDesign'],
-        imageUrl: '/assets/portfolio/charte-graphique-atelier-terre-pixel.png',
+        imageUrl: '/assets/portfolio/charte-graphique-atelier-terre-pixel.webp',
         gallery: [
-          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/charte-graphique-atelier-terre-pixel.webp',
           '/assets/portfolio/webdesigner-agence.jpg',
           '/assets/portfolio/webdesigner-agence.jpg',
         ],
@@ -108,11 +108,11 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Développement Front End',
         stack: ['Angular','TypeScript','RxJS','standalone components'],
         link: '',
-        imageUrl: '/assets/portfolio/materiamedica-application-base-de-donnes-plantes.png',
+        imageUrl: '/assets/portfolio/materia-medica-mobile-app-login.png',
         gallery: [
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/materia-medica-mobile-app-login.png',
+          '/assets/portfolio/materia-medica-app-edit-plant-desktop.png',
+          '/assets/portfolio/application-materia-medica-mobile.png',
         ],
       },
       {

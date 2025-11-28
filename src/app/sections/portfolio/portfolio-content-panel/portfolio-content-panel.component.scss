@@ -174,6 +174,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    cursor: zoom-in;
   }
 
   img {
@@ -182,6 +184,7 @@
     border-radius: 0.75rem;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
     display: block;
+    transition: transform 120ms ease-out;
   }
 
   &__close {
