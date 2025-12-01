@@ -1,0 +1,35 @@
+.contact__layout {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact__card {
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  background: var(--shell-content-alt-bg);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact__actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .contact__layout {
+    padding: 0 1.25rem;
+  }
+
+  .contact__actions {
+    justify-content: flex-start;
+  }
+}
+
+
+
