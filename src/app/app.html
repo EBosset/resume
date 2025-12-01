@@ -1,6 +1,14 @@
 <header class="mobile-header">
   <div class="mobile-header__inner">
     <div class="mobile-header__logo">{{ title() }}</div>
+
+    @if (isMobile()) {
+      <div class="mobile-header__toggles">
+        <app-theme-toggle></app-theme-toggle>
+        <app-color-switcher></app-color-switcher>
+      </div>
+    }
+
     <button
       mat-icon-button
       class="mobile-header__hamburger"
@@ -144,8 +152,10 @@
           </section>
   
     </main>
-    <app-theme-toggle></app-theme-toggle>
-    <app-color-switcher></app-color-switcher>
+    @if (!isMobile()) {
+      <app-theme-toggle></app-theme-toggle>
+      <app-color-switcher></app-color-switcher>
+    }
     @if (showBackToTop()) {
       <button
         type="button"

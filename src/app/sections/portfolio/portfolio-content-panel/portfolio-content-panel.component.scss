@@ -169,8 +169,8 @@
 
   &__content {
     position: relative;
-    max-width: min(90vw, 1200px);
-    max-height: 90vh;
+    max-width: min(95vw, 1400px);
+    max-height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,7 +180,7 @@
 
   img {
     max-width: 100%;
-    max-height: 90vh;
+    max-height: 95vh;
     border-radius: 0.75rem;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
     display: block;
@@ -233,6 +233,16 @@
 
   .portfolio-panel {
     padding: 0.2rem;
+  }
+
+  .portfolio-lightbox {
+    &__content {
+      max-height: 100vh;
+    }
+
+    img {
+      max-height: 100vh;
+    }
   }
 }
 

@@ -74,8 +74,12 @@
 
 @media (max-width: 768px) {
   .switcher-toggle {
-    top: 9%;      // même valeur que theme-toggle
-    right: 4rem;   // décalage horizontal    
+    position: static;
+    top: auto;      // même valeur que theme-toggle
+    right: auto;   // décalage horizontal   
+    width: 40px;
+    height: 40px;
+    z-index: auto;
   }
 
   .switcher {

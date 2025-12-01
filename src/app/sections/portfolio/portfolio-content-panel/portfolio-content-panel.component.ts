@@ -24,6 +24,14 @@ export class PortfolioContentPanelComponent {
   private isDraggingLightbox = false;
   private lastDragX = 0;
   private lastDragY = 0;
+  private isTouchDraggingLightbox = false;
+
+  private getPrimaryTouch(event: TouchEvent): Touch | null {
+    if (!event.touches || event.touches.length === 0) {
+      return null;
+    }
+    return event.touches[0];
+  }
 
   activeImage(project: PortfolioProject): string {
     return this.selectedImages()[project.id] ?? project.imageUrl;
@@ -96,5 +104,51 @@ export class PortfolioContentPanelComponent {
 
   onLightboxMouseLeave(): void {
     this.isDraggingLightbox = false;
+  }
+
+  onLightboxTouchStart(event: TouchEvent): void {
+    if (this.lightboxZoom() <= 1) {
+      return;
+    }
+
+    const touch = this.getPrimaryTouch(event);
+    if (!touch) {
+      return;
+    }
+
+    event.preventDefault();
+    this.isTouchDraggingLightbox = true;
+    this.lastDragX = touch.clientX;
+    this.lastDragY = touch.clientY;
+  }
+
+  onLightboxTouchMove(event: TouchEvent): void {
+    if (!this.isTouchDraggingLightbox) {
+      return;
+    }
+
+    const touch = this.getPrimaryTouch(event);
+    if (!touch) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const dx = touch.clientX - this.lastDragX;
+    const dy = touch.clientY - this.lastDragY;
+
+    this.lastDragX = touch.clientX;
+    this.lastDragY = touch.clientY;
+
+    this.lightboxOffsetX.update((current) => current + dx);
+    this.lightboxOffsetY.update((current) => current + dy);
+  }
+
+  onLightboxTouchEnd(): void {
+    this.isTouchDraggingLightbox = false;
+  }
+
+  onLightboxTouchCancel(): void {
+    this.isTouchDraggingLightbox = false;
   }
 }

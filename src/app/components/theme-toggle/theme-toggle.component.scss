@@ -32,7 +32,12 @@
 
 @media (max-width: 768px) {
   .theme-toggle {
-    top: 9%;
-    right: 1rem;      
+    position: static;
+    top: auto;
+    right: auto;
+    width: 40px;
+    height: 40px;
+    border-width: 1px;
+    box-shadow: none;
   }
 }

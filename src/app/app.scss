@@ -212,9 +212,9 @@ body.theme-light .shell__sidenav a {
     width: 100%;
     max-width: 1200px;
     padding: 0 1.25rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
   }
 
@@ -223,6 +223,12 @@ body.theme-light .shell__sidenav a {
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+  }
+
+  .mobile-header__toggles {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
   .mobile-header__hamburger {
