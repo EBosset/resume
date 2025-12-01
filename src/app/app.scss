@@ -123,6 +123,11 @@
   background-color: var(--shell-content-alt-bg);
 }
 
+/* Section Contact plus compacte : ne force pas un min-height élevé */
+.section.section--contact {
+  min-height: auto;
+}
+
 .section:first-child {
   min-height: auto;
   margin-top: 0;

@@ -179,6 +179,33 @@ body * {
   border: 2px solid transparent;        
 }
 
+
+
+/* BTN */
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px; // léger arrondi / pilule
+  border: none;
+  background-color: var(--accent-color);
+  color: #0f172a; // ou var(--shell-panel-bg) selon le thème
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 120ms ease;
+  margin-top:1.5em;
+  margin-bottom:1em;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+
+
 @media (max-width: 768px) {
   .section__title,
   .section__subtitle {

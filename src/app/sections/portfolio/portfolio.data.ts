@@ -66,7 +66,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         id: 'uiux-app-plantes',
         title: 'UI Design — App interne Formation',
         description:
-          'Application destinée aux étudiants d’une école de formation (accès restreint, pas d’accès public).\n\n Conception UI complète des écrans clés, design system mobile, composants interactifs et maquettes haute fidélité.',
+          'Application destinée aux étudiants d’une école de formation (accès restreint, pas d’accès public).\n\n Conception UI complète des composants clés, design system mobile, composants interactifs et maquettes haute fidélité.',
         role: 'UI kit',
         stack: ['Adobe XD', 'Illustrator'],
         link: '',

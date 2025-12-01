@@ -104,6 +104,16 @@ span {
   fill: currentColor;
 }
 
+.home-header__actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; // optionnel pour mobile
+}
+
+.home-header__actions--mobile {
+  display: none;
+}
 
 
 @keyframes home-header-rotate {
@@ -128,6 +138,18 @@ span {
    
   }
 
+  .home-header__actions--desktop {
+    display: none;
+  }
+
+  .home-header__actions--mobile {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
   .home-header__badge-inner {
     width: 150px;
     height: 150px;
@@ -137,4 +159,6 @@ span {
     font-size: 2.4rem;
   }
 }
+
+
 
