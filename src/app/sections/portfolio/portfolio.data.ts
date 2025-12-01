@@ -70,9 +70,9 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'UI kit',
         stack: ['Adobe XD', 'Illustrator'],
         link: '',
-        imageUrl: '/assets/portfolio/design-composants-application-materia-medica.jpg',
+        imageUrl: '/assets/portfolio/design-composants-application-materia-medica.webp',
         gallery: [
-          '/assets/portfolio/design-composants-application-materia-medica.jpg',
+          '/assets/portfolio/design-composants-application-materia-medica.webp',
           '/assets/portfolio/webdesigner-agence.jpg',
           '/assets/portfolio/webdesigner-agence.jpg',
         ],
@@ -108,11 +108,11 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Développement Front End',
         stack: ['Angular','TypeScript','RxJS','standalone components'],
         link: '',
-        imageUrl: '/assets/portfolio/materia-medica-mobile-app-login.png',
+        imageUrl: '/assets/portfolio/materia-medica-mobile-app-login.webp',
         gallery: [
-          '/assets/portfolio/materia-medica-mobile-app-login.png',
-          '/assets/portfolio/materia-medica-app-edit-plant-desktop.png',
-          '/assets/portfolio/application-materia-medica-mobile.png',
+          '/assets/portfolio/materia-medica-mobile-app-login.webp',
+          '/assets/portfolio/materia-medica-app-edit-plant-desktop.webp',
+          '/assets/portfolio/application-materia-medica-mobile.webp',
         ],
       },
       {

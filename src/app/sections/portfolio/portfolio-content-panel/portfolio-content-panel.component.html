@@ -80,6 +80,10 @@
         (contextmenu)="$event.preventDefault()"
         [style.transform]="'translate(' + lightboxOffsetX() + 'px, ' + lightboxOffsetY() + 'px) scale(' + lightboxZoom() + ')'"
         style="transform-origin: center center;"
+        (touchstart)="onLightboxTouchStart($event)"
+        (touchmove)="onLightboxTouchMove($event)"
+        (touchend)="onLightboxTouchEnd()"
+        (touchcancel)="onLightboxTouchCancel()"
         loading="lazy"
       />
       <button
