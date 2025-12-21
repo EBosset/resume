@@ -1,5 +1,3 @@
-import de from "@angular/common/locales/de";
-
 export interface PortfolioProject {
   id: string;
   title: string;
@@ -12,7 +10,7 @@ export interface PortfolioProject {
 }
 
 export interface PortfolioDiscipline {
-  id: 'artiste-plasticienne' | 'webdesigner' | 'dev-web' | 'ui-ux';
+  id: 'webdesigner-uiux' | 'dev-web' | 'design-craft';
   label: string;
   summary?: string;
   projects: PortfolioProject[];
@@ -20,8 +18,8 @@ export interface PortfolioDiscipline {
 
 export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
   {
-    id: 'webdesigner',
-    label: 'Webdesign',
+    id: 'webdesigner-uiux',
+    label: 'Webdesigner UI/UX',
     summary:'',
     projects: [
       {
@@ -35,44 +33,6 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         imageUrl: '/assets/portfolio/charte-graphique-atelier-terre-pixel.webp',
         gallery: [
           '/assets/portfolio/charte-graphique-atelier-terre-pixel.webp',
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
-        ],
-      },
-      {
-        id: 'webdesigner-agence',
-        title: 'Site vitrine Agence',
-        description:
-          'Refonte complète avec hero immersif, carrousel projets et formulaire multi-étapes.',
-        role: 'UI design & prototype interactif',
-        stack: ['Figma', 'After Effects'],
-        link: '',
-        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
-        gallery: [
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
-        ],
-      },
-    ],
-  },
-  {
-    id: 'ui-ux',
-    label: 'UI / UX',
-    summary:
-      '',
-    projects: [
-      {
-        id: 'uiux-app-plantes',
-        title: 'UI Design — App interne Formation',
-        description:
-          'Application destinée aux étudiants d’une école de formation (accès restreint, pas d’accès public).\n\n Conception UI complète des composants clés, design system mobile, composants interactifs et maquettes haute fidélité.',
-        role: 'UI kit',
-        stack: ['Adobe XD', 'Illustrator'],
-        link: '',
-        imageUrl: '/assets/portfolio/design-composants-application-materia-medica.webp',
-        gallery: [
-          '/assets/portfolio/design-composants-application-materia-medica.webp',
           '/assets/portfolio/webdesigner-agence.jpg',
           '/assets/portfolio/webdesigner-agence.jpg',
         ],
@@ -92,11 +52,26 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           '/assets/portfolio/dating-app-UI-screens-wireflow.webp',
         ],
       },
+      {
+        id: 'uiux-app-plantes',
+        title: 'UI Design — App interne Formation',
+        description:
+          'Application destinée aux étudiants d’une école de formation (accès restreint, pas d’accès public).\n\n Conception UI complète des composants clés, design system mobile, composants interactifs et maquettes haute fidélité.',
+        role: 'UI kit',
+        stack: ['Adobe XD', 'Illustrator'],
+        link: '',
+        imageUrl: '/assets/portfolio/design-composants-application-materia-medica.webp',
+        gallery: [
+          '/assets/portfolio/design-composants-application-materia-medica.webp',
+          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/webdesigner-agence.jpg',
+        ],
+      },
     ],
   },
   {
     id: 'dev-web',
-    label: 'Développement Web',
+    label: 'Développeuse Web',
     summary:
       '',
     projects: [
@@ -104,7 +79,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         id: 'devweb-angular',
         title: 'Application Materia Medica',
         description:
-          'Application destinée aux étudiants d’une école de formation (accès restreint, via un lien d’invitation).\n \n Cette application permet de filtrer les plantes par différentes propriétés (famille, principes actifs, parties de la plante, constituants….etc).\n \nSéparation claire frontend/backend\nSystème d’authentification utilisateur\nTableau de bord admin\nRôles',
+          'Application destinée aux étudiants d’une école de formation (accès restreint, via un lien d’invitation).\n \n Cette application permet de filtrer les plantes par différentes propriétés (famille, principes actifs, parties de la plante, constituants….etc).\n \n ● Séparation claire frontend/backend\n ● Système d’authentification utilisateur\n ● Tableau de bord admin\nRôles',
         role: 'Développement Front End',
         stack: ['Angular','TypeScript','RxJS','standalone components'],
         link: '',
@@ -116,25 +91,36 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         ],
       },
       {
-        id: 'devweb-ecommerce',
-        title: 'Boutique artisanale',
+        id: 'wordpress',
+        title: 'WPM (wpmanager)',
         description:
-          'Site e-commerce headless avec animations micro-interactions, paiement Stripe et gestion de paniers offline.',
+          'Outil Open source pour configurer, installer et servir des projets WordPress en un clin d’œil, sans Apache.\n \n ● Plus besoin d’installer PHP/MySQL/WP‑CLI sur l’OS\n ● Un simple fichier compose.example.yaml à copier/configurer\n ● Base MySQL persistée dans un volume Docker -db_data-\n ● WordPress dispo directement sur http://localhost:8000\n ● Environnement reproductible sur n’importe quelle machine (Docker Desktop)',
         role: 'Front-end lead',
         stack: ['Angular', 'Stripe', 'SCSS'],
-        link: 'https://github.com/',
-        imageUrl: '/assets/portfolio/webdesigner-agence.jpg',
+        link: 'https://github.com/EBosset/wpmanager',
+        imageUrl: '/assets/portfolio/wordpress-manager-installer-configurer-projets-wordpress.webp',
         gallery: [
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/wordpress-manager-installer-configurer-projets-wordpress.webp',          
+        ],
+      },
+      {
+        id: 'angular-image-cropper',
+        title: 'Cropper d’image Angular',
+        description:
+          'Cropper d’image Angular Open source : dialog standalone, compression intégrée, export en base64.\n\n● Ciblé “dialog Material” prêt à l’emploi\n→ Composant standalone pensé pour être ouvert via MatDialog, avec une API claire (Inputs/Outputs) et un flux simple : ouvrir le dialog, écouter les events, récupérer l’image.\n\n● API propre & moderne\n→ OnPush, compression déportée dans un service, Inputs typés (ratio, taille, compression) et Outputs simples, avec un event enrichi (width / height / taille estimée).\n\n● UX, accessibilité & theming pris en compte\n→ Attributs ARIA sur le dialog, boutons accessibles au clavier, theming via variables CSS (facile à intégrer dans n’importe quel design system).',
+        role: 'Développement Front End',
+        stack: ['Angular', 'TypeScript', 'SCSS'],
+        link: 'https://github.com/EBosset/ngx-img-cropper-standalone',
+        imageUrl: '/assets/portfolio/angular-cropper-demo.gif',
+        gallery: [
+          '/assets/portfolio/angular-cropper-demo.gif',                   
         ],
       },
     ],
   },
   {
-    id: 'artiste-plasticienne',
-    label: 'Arts plastiques',
+    id: 'design-craft',
+    label: 'Design & Craft',
     summary:
       '',
     projects: [      
@@ -145,7 +131,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Recherches techniques & création d’un décor céramique complet, décliné en 4 coloris, et application sur différentes pièces.\nCollection exposée au salon Nimagine 2013.',
         role: 'Céramique',
         stack: ['Art', 'créativité', 'technique'],
-        link: 'https://www.behance.net/',
+        link: '',
         imageUrl: '/assets/portfolio/decor-orange-gris-assortiment-pieces.webp',
         gallery: [
           '/assets/portfolio/decor-orange-gris-assortiment-pieces.webp',

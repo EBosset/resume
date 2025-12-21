@@ -55,12 +55,20 @@
     gap: 0.75rem;
   }
 
-  &__media-main img {
+  &__image {
     width: 100%;
     border-radius: 0.9rem;
     display: block;
     object-fit: cover;
     aspect-ratio: 4 / 3;
+  }
+
+  &__image--contain {
+    object-fit: contain;
+    object-position: center;
+    background: var(--shell-content-bg);
+    padding: 2rem;
+    box-sizing: border-box;
   }
 
   &__media-thumbs {
@@ -77,12 +85,18 @@
     padding: 0.15rem;
     transition: border-color 160ms ease, transform 160ms ease;
 
-    img {
+    .portfolio-project__thumb-image {
       display: block;
       width: 64px;
       height: 48px;
       object-fit: cover;
       border-radius: 0.35rem;
+    }
+
+    .portfolio-project__thumb-image--contain {
+      object-fit: contain;
+      object-position: center;
+      background: var(--shell-content-bg);
     }
 
     &--active {
@@ -161,7 +175,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(38, 38, 38, 0.85);
+  background: color-mix(in srgb, var(--shell-content-bg) 85%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,16 +190,32 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    cursor: zoom-in;
+    cursor: default;
   }
 
   img {
     max-width: 100%;
     max-height: 95vh;
     border-radius: 0.75rem;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
     display: block;
-    transition: transform 120ms ease-out;
+    transition: none;
+  }
+
+  .portfolio-lightbox__image--fill {
+    width: min(92vw, 1100px);
+    height: auto;
+    max-width: min(92vw, 1100px);
+    max-height: 85vh;
+    object-fit: contain;
+  }
+
+  .portfolio-lightbox__image--wpm-size {
+    width: min(55vw, 780px);
+    height: auto;
+    max-width: min(55vw, 780px);
+    max-height: 90vh;
+    object-fit: contain;
   }
 
   &__close {
@@ -195,10 +226,19 @@
     border-radius: 9999px;
     padding: 0.25rem 0.6rem;
     cursor: pointer;
-    background: rgba(15, 23, 42, 0.8);
+    background: color-mix(in srgb, var(--shell-content-bg) 80%, transparent);
     color: #e5e7eb;
     font-size: 1.2rem;
     line-height: 1;
+  }
+}
+
+:host-context(body.theme-light) {
+  .portfolio-lightbox {
+    &__close {
+      background: rgba(38, 38, 38, 0.75);
+      color: #ffffff;
+    }
   }
 }
 
@@ -238,6 +278,13 @@
   .portfolio-lightbox {
     &__content {
       max-height: 100vh;
+    }
+
+    &__content--frame {
+      width: 92vw;
+      max-width: 92vw;
+      max-height: 90vh;
+      padding: 1.5rem;
     }
 
     img {
