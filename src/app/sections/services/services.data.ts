@@ -9,36 +9,24 @@ export interface ServiceItem {
 
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'webdesign',
-    title: 'Webdesign',
-    shortDescription: `Création d'identités visuelles fortes et interfaces modernes qui valorisent votre marque.`,
+    id: 'webdesigner-uiux',
+    title: 'Webdesigner UI/UX',
+    shortDescription: `Logos, chartes graphiques et interfaces modernes, pensés pour votre marque et vos utilisateurs.`,
     imageUrl: '/assets/services/img.jpg',
     content: `
-Je conçois des identités visuelles efficaces, esthétiques et cohérentes : logos, chartes graphiques, plaquettes, cartes de visite et supports print.\n
-J’imagine des maquettes desktop et mobile structurées par une hiérarchie visuelle maîtrisée, un rythme de sections harmonieux, des traitements 
-typographiques soignés, ainsi que des CTA et variantes responsive.\n
-Chaque interface est pensée pour être moderne, engageante, orientée conversion et parfaitement alignée avec votre marque.
-
-    `,
-    icon: 'web',
-  },
-  {
-    id: 'ui-ux',
-    title: 'UI / UX',
-    shortDescription: `Expériences intuitives, centrées utilisateur, pensées pour performer.`,
-    imageUrl: '/assets/services/img.jpg',
-    content: `
-J’accompagne vos projets depuis l’exploration UX (analyse des besoins utilisateurs, parcours, wireframes)
-jusqu’à la création d’un UI kit complet incluant une bibliothèque de composants, leurs états et micro-interactions.\n
-Mon objectif : concevoir des expériences simples, accessibles et fidèles à votre marque.\n
-Grâce à la recherche, aux prototypes interactifs et aux tests, je construis des parcours intuitifs et performants, 
-pensés pour convertir efficacement et prêts à être livrés au développement.
+WEBDESIGN / IDENTITÉ VISUELLE\n
+Je conçois des identités visuelles cohérentes et impactantes : logo, charte graphique, choix typographiques et palettes, ainsi que les supports clés.
+Je décline ensuite cette direction sur des maquettes web modernes (desktop & mobile), avec une hiérarchie claire, des sections lisibles et des CTA efficaces.\n
+UI / UX\n
+J’accompagne vos projets depuis l’exploration UX (analyse des besoins, parcours, wireframes) jusqu’à la création d’un UI kit complet.
+Je structure des composants, leurs états et micro-interactions, pour livrer un design prêt à intégrer, accessible et performant.\n
+Mon objectif : une expérience fluide, alignée avec votre marque et pensée pour convertir.
     `,
     icon: 'dashboard_customize',
   },
   {
     id: 'dev-web',
-    title: 'Développement Web',
+    title: 'Développeuse Web',
     shortDescription: `Intégrations modernes, rapides et accessibles pour des sites fiables.`,
     imageUrl: '/assets/services/img.jpg',
     content: `
@@ -48,15 +36,14 @@ Optimisation, responsive, accessibilité et bonnes pratiques front-end : votre s
     icon: 'code',
   },
   {
-    id: 'artiste-plasticienne',
-    title: 'Arts plastiques',
+    id: 'design-craft',
+    title: 'Design & Craft',
     shortDescription: `Création de décors uniques et sur-mesure, adaptés à tous vos supports physiques.`,
     imageUrl: '/assets/services/img.jpg',
     content: `
 Je crée des univers tangibles : fresques murales, vitrines, objets peints, textiles, motifs, textures ou installations événementielles.\n
 Chaque décor est original, sur-mesure et pensé pour révéler la matière, l’espace et votre univers.\n
-J’assure également la direction artistique et la charte graphique associée afin de garantir la cohérence entre vos supports physiques
- et numériques, du motif à l’univers visuel final.\n
+J’assure également la direction artistique et la charte graphique associée afin de garantir la cohérence entre vos supports physiques et numériques, du motif à l’univers visuel final.\n
     `,
     icon: 'brush',
   },
