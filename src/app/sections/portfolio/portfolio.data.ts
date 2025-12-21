@@ -56,7 +56,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         id: 'uiux-app-plantes',
         title: 'UI Design — App interne Formation',
         description:
-          'Application destinée aux étudiants d’une école de formation (accès restreint, pas d’accès public).\n\n Conception UI complète des composants clés, design system mobile, composants interactifs et maquettes haute fidélité.',
+          'Application destinée aux étudiants d’une école de formation (accès restreint, pas d’accès public).\n\n Conception UI complète des composants clés de l’application.',
         role: 'UI kit',
         stack: ['Adobe XD', 'Illustrator'],
         link: '',
@@ -147,7 +147,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           'Production d’une collection de pièces utilitaires en porcelaine. \n Tournage : Dessin des pièces, calcul du poids de terre imparti à chaque forme de pièce\nCréation & application de 4 gammes de décors\nCuisson ',
         role: 'Céramique',
         stack: ['Direction Artisitique','production de la collection'],
-        link: 'https://www.behance.net/',
+        link: '',
         imageUrl: '/assets/portfolio/expo-collection-porcelaine-nimagine.webp',
         gallery: [
           '/assets/portfolio/expo-collection-porcelaine-nimagine.webp',

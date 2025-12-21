@@ -15,7 +15,7 @@
               [src]="activeImage(project)"
               [alt]="project.title"
               loading="lazy"
-              (click)="openLightbox(project.id, activeImage(project), project.title)"
+              (click)="openLightbox(project.id, activeImage(project), project.title, project.gallery)"
             />
           </div>
 
@@ -85,6 +85,26 @@
         (contextmenu)="$event.preventDefault()"
         loading="lazy"
       />
+
+      <button
+        *ngIf="lightboxGallery().length > 1"
+        type="button"
+        class="portfolio-lightbox__nav portfolio-lightbox__nav--prev"
+        (click)="showPrevLightboxImage(); $event.stopPropagation()"
+        aria-label="Image précédente"
+      >
+        ‹
+      </button>
+      <button
+        *ngIf="lightboxGallery().length > 1"
+        type="button"
+        class="portfolio-lightbox__nav portfolio-lightbox__nav--next"
+        (click)="showNextLightboxImage(); $event.stopPropagation()"
+        aria-label="Image suivante"
+      >
+        ›
+      </button>
+
       <button
         type="button"
         class="portfolio-lightbox__close"
