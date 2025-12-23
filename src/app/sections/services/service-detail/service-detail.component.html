@@ -13,11 +13,13 @@
 
     <div class="service-detail__inner">
       <div class="service-detail__image-wrapper">
-        <img
-          class="service-detail__image"
-          [src]="service.imageUrl"
-          [alt]="service.title"
-        />
+        <div class="service-detail__image-clip">
+          <img
+            class="service-detail__image"
+            [src]="service.imageUrl"
+            [alt]="service.title"
+          />
+        </div>
       </div>
 
       <div class="service-detail__body">
