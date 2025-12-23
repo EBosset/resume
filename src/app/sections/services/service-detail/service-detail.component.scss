@@ -45,12 +45,21 @@
   padding: 1.5rem 1.75rem 0;
 }
 
+.service-detail__image-clip {
+  display: block;
+  border-radius: 0.9rem !important;
+  overflow: hidden !important;
+  clip-path: inset(0 round 0.9rem);
+  background: var(--shell-content-bg);
+  transform: translateZ(0);
+}
+
 .service-detail__image {
   width: 100%;
   display: block;
-  border-radius: 0.9rem;
+  border-radius: 0.9rem !important;
   object-fit: cover;
-  max-height: 360px;
+  max-height: min(520px, 45vh);
 }
 
 .service-detail__title { 
@@ -103,5 +112,9 @@
   .service-detail__inner::-webkit-scrollbar-track,
   .service-detail__inner::-webkit-scrollbar-thumb {
     background: transparent;
+  }
+
+  .service-detail__image {
+    max-height: min(360px, 32vh);
   }
 }
