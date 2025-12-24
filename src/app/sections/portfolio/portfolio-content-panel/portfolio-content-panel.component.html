@@ -15,7 +15,7 @@
               [src]="activeImage(project)"
               [alt]="project.title"
               loading="lazy"
-              (click)="openLightbox(project.id, activeImage(project), project.title, project.gallery)"
+              (click)="openLightbox(project.id, lightboxStartImage(project), project.title, project.gallery)"
             />
           </div>
 
@@ -75,6 +75,11 @@
     <div
       class="portfolio-lightbox__content"
       (click)="$event.stopPropagation()"
+      (wheel)="onLightboxWheel($event)"
+      (mousedown)="onLightboxMouseDown($event)"
+      (mousemove)="onLightboxMouseMove($event)"
+      (mouseup)="onLightboxMouseUp()"
+      (mouseleave)="onLightboxMouseLeave()"
     >
       <img
         class="portfolio-lightbox__image"
@@ -83,6 +88,12 @@
         [src]="image"
         [alt]="lightboxAlt()"
         (contextmenu)="$event.preventDefault()"
+        [style.transform]="'translate(' + lightboxOffsetX() + 'px, ' + lightboxOffsetY() + 'px) scale(' + lightboxZoom() + ')'"
+        style="transform-origin: center center;"
+        (touchstart)="onLightboxTouchStart($event)"
+        (touchmove)="onLightboxTouchMove($event)"
+        (touchend)="onLightboxTouchEnd()"
+        (touchcancel)="onLightboxTouchCancel()"
         loading="lazy"
       />
 

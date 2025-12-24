@@ -190,7 +190,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    cursor: default;
+    cursor: zoom-in;
   }
 
   img {
@@ -199,7 +199,7 @@
     border-radius: var(--radius-md);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
     display: block;
-    transition: none;
+    transition: transform 120ms ease-out;
   }
 
   .portfolio-lightbox__image--fill {
@@ -281,11 +281,9 @@
 @keyframes fadeSlide {
   from {
     opacity: 0;
-    transform: translateY(16px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 

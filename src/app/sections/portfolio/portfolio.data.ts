@@ -4,6 +4,7 @@ export interface PortfolioProject {
   description: string;
   role: string;
   stack: string[];
+  cardImageUrl?: string;
   imageUrl: string;
   link?: string;
   gallery?: string[];
