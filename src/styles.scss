@@ -25,6 +25,31 @@ html {
   --shell-panel-text: #f9fafb; // texte par défaut sur ces panneaux
   --shell-content-bg: #262626; // fond par défaut de la zone de contenu
   --soft-dot-color: #ffffff;   // couleur blanche pour certains indicateurs (ex: dots biographie)
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xs: 0.35rem;
+  --radius-pill: 999px;
+
+  --border-color-subtle: rgba(148, 163, 184, 0.25);
+  --border-color-default: rgba(148, 163, 184, 0.35);
+  --border-color-muted: rgba(148, 163, 184, 0.3);
+  --border-color-strong: rgba(148, 163, 184, 0.5);
+  --border-color-stronger: rgba(148, 163, 184, 0.7);
+
+  --shadow-sm: 0 10px 20px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.65);
+  --shadow-floating: 0 16px 30px rgba(0, 0, 0, 0.45);
+
+  --z-header: 10;
+  --z-overlay: 1990;
+  --z-modal: 2000;
+  --z-tooltip: 9999;
+
+  --on-accent: #0f172a;
+  --timing-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .text-preline {
@@ -175,7 +200,7 @@ body * {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--accent-color);  
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 2px solid transparent;        
 }
 
@@ -188,10 +213,10 @@ body * {
   align-items: center;
   justify-content: center;
   padding: 0.6rem 1.5rem;
-  border-radius: 999px; // léger arrondi / pilule
+  border-radius: var(--radius-pill); // léger arrondi / pilule
   border: none;
   background-color: var(--accent-color);
-  color: #0f172a; // ou var(--shell-panel-bg) selon le thème
+  color: var(--on-accent);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;

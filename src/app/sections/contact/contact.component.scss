@@ -8,9 +8,9 @@
 
 .contact__card {
   padding: 2rem 2.5rem;
-  border-radius: 1rem;
+  border-radius: var(--radius-lg);
   background: var(--shell-content-alt-bg);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid var(--border-color-default);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

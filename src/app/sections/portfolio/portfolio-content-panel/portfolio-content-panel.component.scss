@@ -45,9 +45,9 @@
   grid-template-columns: minmax(0, 45%) minmax(0, 55%);
   gap: 1.5rem;
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: var(--radius-lg);
   background: var(--shell-content-alt-bg);
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  border: 1px solid var(--border-color-subtle);
 
   &__media {
     display: flex;
@@ -81,7 +81,7 @@
     all: unset;
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 0.5rem;
+    border-radius: var(--radius-sm);
     padding: 0.15rem;
     transition: border-color 160ms ease, transform 160ms ease;
 
@@ -90,7 +90,7 @@
       width: 64px;
       height: 48px;
       object-fit: cover;
-      border-radius: 0.35rem;
+      border-radius: var(--radius-xs);
     }
 
     .portfolio-project__thumb-image--contain {
@@ -132,7 +132,7 @@
 
   &__stack-badge {
     padding: 0.15rem 0.65rem;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     border: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -154,17 +154,17 @@
     margin-top: auto;
     align-self: flex-start;
     padding: 0.5rem 1.2rem;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     border: 1px solid transparent;
     background: var(--accent-color);
-    color: #0f172a;
+    color: var(--on-accent);
     font-weight: 600;
     text-decoration: none;
     transition: transform 160ms ease, box-shadow 160ms ease;
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      box-shadow: var(--shadow-sm);
     }
   }
 }
@@ -196,7 +196,7 @@
   img {
     max-width: 100%;
     max-height: 95vh;
-    border-radius: 0.75rem;
+    border-radius: var(--radius-md);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
     display: block;
     transition: none;
@@ -223,7 +223,7 @@
     top: 0.5rem;
     right: 0.5rem;
     border: none;
-    border-radius: 9999px;
+    border-radius: var(--radius-pill);
     padding: 0.25rem 0.6rem;
     cursor: pointer;
     background: color-mix(in srgb, var(--shell-content-bg) 80%, transparent);
@@ -237,7 +237,7 @@
     top: 50%;
     transform: translateY(-50%);
     border: none;
-    border-radius: 9999px;
+    border-radius: var(--radius-pill);
     width: 44px;
     height: 44px;
     display: inline-flex;
