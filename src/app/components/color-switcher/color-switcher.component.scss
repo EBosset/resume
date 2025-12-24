@@ -4,8 +4,8 @@
   right: 3.2rem;
   width: 44px;
   height: 44px;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.7);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color-stronger);
   background: var(--accent-color);  // bouton rond = couleur d'accent
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@
 .toggle-dot {
   width: 14px;
   height: 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   display: block;
 }
 
@@ -33,7 +33,7 @@
   background: var(--shell-panel-bg);
   color: var(--shell-panel-text);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-md);
   padding: 1rem 1.25rem 1.25rem;
   width: 190px;
   z-index: 1100;
@@ -62,7 +62,7 @@
 .color-dot {
   width: 26px;
   height: 26px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 2px solid transparent;
   cursor: pointer;
 }
