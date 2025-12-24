@@ -128,7 +128,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         id: 'plasticienne-branding-salon',
         title: 'Décor pour l’entreprise Galtié',
         description:
-          'Recherches techniques & création d’un décor céramique complet, décliné en 4 coloris, et application sur différentes pièces.\nCollection exposée au salon Nimagine 2013.',
+          'Création d’un décor céramique complet, décliné en 4 coloris, et application sur différentes pièces.\nCollection exposée au salon Nimagine 2013.\n\n ● Recherches techniques\n ● Calculs composants engobes\n● Création du décor \n ● Application du décor',
         role: 'Céramique',
         stack: ['Art', 'créativité', 'technique'],
         link: '',
@@ -144,7 +144,7 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         id: 'production-porcelaine',
         title: 'Collection Porcelaine Salon Nimagine',
         description:
-          'Production d’une collection de pièces utilitaires en porcelaine. \n Tournage : Dessin des pièces, calcul du poids de terre imparti à chaque forme de pièce\nCréation & application de 4 gammes de décors\nCuisson ',
+          'Production d’une collection de pièces utilitaires en porcelaine. \n \n ● Dessin des pièces \n ● Calcul du poids de terre imparti à chaque forme de pièce\n● Tournage / tournassage \n● Création & application de 4 gammes de décors\n● Cuisson \n● Tests ',
         role: 'Céramique',
         stack: ['Direction Artisitique','production de la collection'],
         link: '',

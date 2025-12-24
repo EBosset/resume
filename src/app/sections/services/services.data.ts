@@ -39,7 +39,7 @@ Optimisation, responsive, accessibilité et bonnes pratiques front-end : votre s
     id: 'design-craft',
     title: 'Design & Craft',
     shortDescription: `Création de décors uniques et sur-mesure, adaptés à tous vos supports physiques.`,
-    imageUrl: '/assets/services/design-craft-creation-decors-tous-supports.webp',
+    imageUrl: '/assets/services/design-craft-creation-application-decors-tous-supports.webp',
     content: `
 Je crée des univers tangibles : fresques murales, vitrines, objets peints, textiles, motifs, textures ou installations événementielles.\n
 Chaque décor est original, sur-mesure et pensé pour révéler la matière, l’espace et votre univers.\n
