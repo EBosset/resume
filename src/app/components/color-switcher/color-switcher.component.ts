@@ -17,20 +17,27 @@ export class ColorSwitcherComponent {
   readonly accent = this.theme.accent;
   readonly isOpen = signal(false);
 
-  readonly colors = [
-    '#FF5349',
-    '#a3f307',
-    '#634352',
-    '#605e2d',
-    '#03A9F4',
-    '#00BCD4',
-    '#4CAF50',
-    '#8BC34A',
-    '#9C27B0',
-    '#E91E63',
-    '#3F51B5',
-    '#009688',
-    '#795548',
+  readonly colorGroups = [
+    {
+      title: 'Dark mode',
+      subtitle: 'Couleurs vives conseillées',
+      colors: [
+        '#FF5349',
+        '#A3F307',
+        '#BC13FE', 
+        '#4deeea', 
+      ],
+    },
+    {
+      title: 'Light mode',
+      subtitle: 'Teintes douces recommandées',
+      colors: [        
+        '#D86C63',
+        '#A6B59A',              
+        '#C9A574', 
+        '#B17090',        
+      ],
+    },
   ];
 
   setAccent(color: string): void {

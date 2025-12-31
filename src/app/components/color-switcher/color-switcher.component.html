@@ -10,15 +10,26 @@
 
     <h3 class="title">Color switcher</h3>
 
-    <div class="colors">
-      @for (color of colors; track color) {
-        <button
-          type="button"
-          class="color-dot"
-          [ngClass]="{ selected: accent() === color }"
-          [style.background-color]="color"
-          (click)="setAccent(color)"
-        ></button>
+    <div class="color-groups">
+      @for (group of colorGroups; track group.title) {
+        <section class="color-group">
+          <header class="color-group__header">
+            <p class="color-group__title">{{ group.title }}</p>
+            <p class="color-group__subtitle">{{ group.subtitle }}</p>
+          </header>
+
+          <div class="colors">
+            @for (color of group.colors; track color) {
+              <button
+                type="button"
+                class="color-dot"
+                [ngClass]="{ selected: accent() === color }"
+                [style.background-color]="color"
+                (click)="setAccent(color)"
+              ></button>
+            }
+          </div>
+        </section>
       }
     </div>
   </div>
