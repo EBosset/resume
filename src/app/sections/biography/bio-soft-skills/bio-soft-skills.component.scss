@@ -93,21 +93,17 @@
   display: none;
 }
 
-.bio-soft__title {
-  position: relative;
-}
-
-.bio-soft__title::before {
+.bio-soft__item .bio-soft__title::before {
   content: '';
   position: absolute;
-  left: -1.9rem;
+  left: -1.75rem;
   top: 50%;
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   border: 1px solid var(--soft-dot-color);
   background: var(--soft-dot-color);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.12);
   transform: translateY(-50%);
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
@@ -127,6 +123,7 @@
 
 .bio-soft__item .bio-soft__title {
   margin: 0;
+  position: relative;
 }
 
 .bio-soft__description {

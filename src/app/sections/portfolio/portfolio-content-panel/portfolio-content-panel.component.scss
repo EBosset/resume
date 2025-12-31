@@ -57,6 +57,10 @@
 
   &__media-main {
     position: relative;
+    border-radius: 0.9rem;
+    overflow: hidden;
+    max-height: clamp(230px, 30vw, 420px);
+    background: var(--shell-content-bg);
   }
 
   &__image-wrapper {
@@ -88,7 +92,7 @@
 
   &__image {
     width: 100%;
-    border-radius: 0.9rem;
+    border-radius: inherit;
     display: block;
     image-rendering: auto;
     transition: transform 160ms ease, opacity 160ms ease;

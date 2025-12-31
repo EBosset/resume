@@ -37,7 +37,7 @@ Optimisation, responsive, accessibilité et bonnes pratiques front-end : votre s
   },
   {
     id: 'design-craft',
-    title: 'Design & Craft',
+    title: 'Making',
     shortDescription: `Création de décors uniques et sur-mesure, adaptés à tous vos supports physiques.`,
     imageUrl: '/assets/services/design-craft-creation-application-decors-tous-supports.webp',
     content: `
