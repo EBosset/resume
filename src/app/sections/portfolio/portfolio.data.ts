@@ -12,7 +12,7 @@ export interface PortfolioProject {
 }
 
 export interface PortfolioDiscipline {
-  id: 'webdesigner-uiux' | 'dev-web' | 'design-craft';
+  id: 'webdesigner-uiux' | 'dev-web' | 'making';
   label: string;
   summary?: string;
   projects: PortfolioProject[];
@@ -121,18 +121,18 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Développement Front End',
         stack: ['Angular', 'TypeScript', 'SCSS'],
         link: 'https://github.com/EBosset/ngx-img-cropper-standalone',
-        cardImageUrl: '/assets/portfolio/angular-cropper-demo.gif',
-        lightboxImageUrl: '/assets/portfolio/angular-cropper-demo.gif',
-        imageUrl: '/assets/portfolio/angular-cropper-demo.gif',
+        cardImageUrl: '/assets/portfolio/cropper-images-angular-1400.webp',
+        lightboxImageUrl: '/assets/portfolio/cropper-images-angular-1400.webp',
+        imageUrl: '/assets/portfolio/cropper-images-angular-1400.webp',
         gallery: [
-          '/assets/portfolio/angular-cropper-demo.gif',                   
+          '/assets/portfolio/cropper-images-angular-1400.webp',                   
         ],
       },
     ],
   },
   {
-    id: 'design-craft',
-    label: 'Design & Craft',
+    id: 'making',
+    label: 'Making',
     summary:
       '',
     projects: [      
