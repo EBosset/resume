@@ -6,6 +6,7 @@ export interface PortfolioProject {
   stack: string[];
   cardImageUrl?: string;
   imageUrl: string;
+  lightboxImageUrl?: string;
   link?: string;
   gallery?: string[];
 }
@@ -31,11 +32,12 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
           +'hiérarchie des visuels, présentation de la marque.',
         role: 'Logo + Charte graphique',
         stack: ['Illustrator', 'InDesign'],
-        imageUrl: '/assets/portfolio/charte-graphique-atelier-terre-pixel.webp',
+        cardImageUrl: '/assets/portfolio/charte-graphique-atelier-1400.webp',
+        lightboxImageUrl: '/assets/portfolio/charte-graphique-atelier-2800.webp',
+        imageUrl: '/assets/portfolio/charte-graphique-atelier-2800.webp',
         gallery: [
-          '/assets/portfolio/charte-graphique-atelier-terre-pixel.webp',
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
+          '/assets/portfolio/charte-graphique-atelier-1400.webp',
+          
         ],
       },
       {
@@ -46,11 +48,13 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Lead UX/UI',
         stack: ['Adobe XD', 'Illustrator'],
         link: '',
-        imageUrl: '/assets/portfolio/ux-user-journey-app.webp',
+        cardImageUrl: '/assets/portfolio/ux-user-journey-map-1400.webp',
+        lightboxImageUrl: '/assets/portfolio/ux-user-journey-map-2800.webp',
+        imageUrl: '/assets/portfolio/ux-user-journey-map-2800.webp',
         gallery: [
-          '/assets/portfolio/ux-user-journey-app.webp',
+          '/assets/portfolio/ux-user-journey-map-2800.webp',
           '/assets/portfolio/flowchart-login.webp',
-          '/assets/portfolio/dating-app-UI-screens-wireflow.webp',
+          '/assets/portfolio/dating-app-UI-screens-wireflow-2800.webp',
         ],
       },
       {
@@ -61,11 +65,12 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'UI kit',
         stack: ['Adobe XD', 'Illustrator'],
         link: '',
+        cardImageUrl: '/assets/portfolio/design-composants-application-materia-medica-1400.webp',
+        lightboxImageUrl: '/assets/portfolio/design-composants-application-materia-medica.webp',
         imageUrl: '/assets/portfolio/design-composants-application-materia-medica.webp',
         gallery: [
           '/assets/portfolio/design-composants-application-materia-medica.webp',
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
+          
         ],
       },
     ],
@@ -84,6 +89,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Développement Front End',
         stack: ['Angular','TypeScript','RxJS','standalone components'],
         link: '',
+        cardImageUrl: '/assets/portfolio/materia-medica-mobile-app-login.webp',
+        lightboxImageUrl: '/assets/portfolio/materia-medica-mobile-app-login.webp',
         imageUrl: '/assets/portfolio/materia-medica-mobile-app-login.webp',
         gallery: [
           '/assets/portfolio/materia-medica-mobile-app-login.webp',
@@ -99,6 +106,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Front-end lead',
         stack: ['Angular', 'Stripe', 'SCSS'],
         link: 'https://github.com/EBosset/wpmanager',
+        cardImageUrl: '/assets/portfolio/wordpress-manager-installer-configurer-projets-wordpress.webp',
+        lightboxImageUrl: '/assets/portfolio/wordpress-manager-installer-configurer-projets-wordpress.webp',
         imageUrl: '/assets/portfolio/wordpress-manager-installer-configurer-projets-wordpress.webp',
         gallery: [
           '/assets/portfolio/wordpress-manager-installer-configurer-projets-wordpress.webp',          
@@ -112,6 +121,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Développement Front End',
         stack: ['Angular', 'TypeScript', 'SCSS'],
         link: 'https://github.com/EBosset/ngx-img-cropper-standalone',
+        cardImageUrl: '/assets/portfolio/angular-cropper-demo.gif',
+        lightboxImageUrl: '/assets/portfolio/angular-cropper-demo.gif',
         imageUrl: '/assets/portfolio/angular-cropper-demo.gif',
         gallery: [
           '/assets/portfolio/angular-cropper-demo.gif',                   
@@ -133,6 +144,8 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Céramique',
         stack: ['Art', 'créativité', 'technique'],
         link: '',
+        cardImageUrl: '/assets/portfolio/decor-orange-gris-assortiment-pieces.webp',
+        lightboxImageUrl: '/assets/portfolio/decor-orange-gris-assortiment-pieces.webp',
         imageUrl: '/assets/portfolio/decor-orange-gris-assortiment-pieces.webp',
         gallery: [
           '/assets/portfolio/decor-orange-gris-assortiment-pieces.webp',
@@ -149,11 +162,12 @@ export const PORTFOLIO_DISCIPLINES: PortfolioDiscipline[] = [
         role: 'Céramique',
         stack: ['Direction Artisitique','production de la collection'],
         link: '',
+        cardImageUrl: '/assets/portfolio/expo-collection-porcelaine-nimagine.webp',
+        lightboxImageUrl: '/assets/portfolio/expo-collection-porcelaine-nimagine.webp',
         imageUrl: '/assets/portfolio/expo-collection-porcelaine-nimagine.webp',
         gallery: [
           '/assets/portfolio/expo-collection-porcelaine-nimagine.webp',
-          '/assets/portfolio/webdesigner-agence.jpg',
-          '/assets/portfolio/webdesigner-agence.jpg',
+         
         ],
       },
     ],

@@ -24,6 +24,7 @@ html {
   --shell-panel-bg: #0b0b0f;   // fond par défaut des panneaux (sidenav, header mobile, etc.)
   --shell-panel-text: #f9fafb; // texte par défaut sur ces panneaux
   --shell-content-bg: #262626; // fond par défaut de la zone de contenu
+  --shell-divider-color: rgba(255, 255, 255, 0.12);
   --soft-dot-color: #ffffff;   // couleur blanche pour certains indicateurs (ex: dots biographie)
 
   --radius-sm: 0.5rem;
@@ -103,15 +104,18 @@ body {
 }
 
 body.theme-light {
-  background-color: #ffffff;
-  color: #020617;
+  background-color: #f7f4ef;
+  color: #1f1a17;
   color-scheme: light;
-  --shell-panel-bg: #ffffff;
-  --shell-panel-text: #020617;
-  --shell-content-bg: #ffffff;      
-  --shell-content-alt-bg: #FBFCFA;  
+  --shell-panel-bg: #f7f4ef;
+  --shell-panel-text: #1f1a17;
+  --shell-content-bg: #f7f4ef;
+  --shell-content-alt-bg: #efe9e2;
+  --border-color-subtle: rgba(149, 129, 117, 0.25);
+  --border-color-default: rgba(149, 129, 117, 0.35);
+  --border-color-muted: rgba(149, 129, 117, 0.3);
+  --shell-divider-color: rgba(31, 26, 23, 0.28);
 }
-
 
 body.theme-dark {
   background-color: #262626;
@@ -121,6 +125,7 @@ body.theme-dark {
   --shell-panel-text: #f9fafb;
   --shell-content-bg: #262626;   
   --shell-content-alt-bg: #333333; 
+  --shell-divider-color: rgba(255, 255, 255, 0.18);
 }
 
 /* Backdrop de la modale Services : adapté au thème */

@@ -14,9 +14,15 @@
               [class.portfolio-project__image--contain]="project.id === 'wordpress'"
               [src]="activeImage(project)"
               [alt]="project.title"
-              loading="lazy"
+              (contextmenu)="$event.preventDefault()"
               (click)="openLightbox(project.id, lightboxStartImage(project), project.title, project.gallery)"
             />
+            <mat-icon
+              class="portfolio-project__zoom-icon"
+              aria-hidden="true"
+            >
+              search
+            </mat-icon>
           </div>
 
           @if (project.gallery?.length) {
@@ -33,6 +39,7 @@
                     [class.portfolio-project__thumb-image--contain]="project.id === 'wordpress'"
                     [src]="thumb"
                     [alt]="project.title + ' vignette'"
+                    (contextmenu)="$event.preventDefault()"
                   />
                 </button>
               }
@@ -94,7 +101,6 @@
         (touchmove)="onLightboxTouchMove($event)"
         (touchend)="onLightboxTouchEnd()"
         (touchcancel)="onLightboxTouchCancel()"
-        loading="lazy"
       />
 
       <button

@@ -11,7 +11,7 @@
   top: 8rem;
   bottom: 8rem;           // prend toute la hauteur de viewport
   width: 4px;
-  background-color: var(--shell-panel-text); // ou var(--accent-color)
+  background-color: var(--shell-divider-color);
   pointer-events: none;
   z-index: 5;
 }

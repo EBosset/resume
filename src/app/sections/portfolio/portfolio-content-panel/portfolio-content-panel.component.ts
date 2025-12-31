@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, signal } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 import { PortfolioDiscipline, PortfolioProject } from '../portfolio.data';
 
 @Component({
   selector: 'app-portfolio-content-panel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './portfolio-content-panel.component.html',
   styleUrl: './portfolio-content-panel.component.scss',
 })
@@ -42,7 +43,7 @@ export class PortfolioContentPanelComponent {
   }
 
   lightboxStartImage(project: PortfolioProject): string {
-    return this.selectedImages()[project.id] ?? project.imageUrl;
+    return this.selectedImages()[project.id] ?? project.lightboxImageUrl ?? project.imageUrl;
   }
 
   selectImage(projectId: string, image: string): void {

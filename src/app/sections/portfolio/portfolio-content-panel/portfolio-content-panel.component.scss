@@ -1,6 +1,6 @@
-.portfolio-panel {
+  .portfolio-panel {
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;
   margin-inline: auto;
   background: var(--shell-content-bg);
   border-radius: 1.2rem;  
@@ -55,12 +55,61 @@
     gap: 0.75rem;
   }
 
+  &__media-main {
+    position: relative;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: zoom-in;
+    border-radius: 0.9rem;
+    overflow: hidden;
+
+    &:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 4px;
+    }
+
+    &:hover .portfolio-project__image {
+      transform: scale(1.01);
+    }
+
+    &:hover .portfolio-project__image-hint {
+      opacity: 1;
+      transform: translate(-50%, -4px);
+    }
+  }
+
   &__image {
     width: 100%;
     border-radius: 0.9rem;
     display: block;
-    object-fit: cover;
-    aspect-ratio: 4 / 3;
+    image-rendering: auto;
+    transition: transform 160ms ease, opacity 160ms ease;
+  }
+
+  // Icône Material "search" discrète sur l'image (indique la lightbox)
+  &__zoom-icon {
+    position: absolute;
+    right: 0.55rem;
+    bottom: 0.55rem;
+    font-size: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--accent-color);
+    pointer-events: none; // ne bloque pas le clic sur l'image
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
   }
 
   &__image--contain {
@@ -175,8 +224,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(38, 38, 38, 0.85);
-  background: color-mix(in srgb, var(--shell-content-bg) 85%, transparent);
+  background: rgba(10, 10, 10, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -191,15 +239,18 @@
     justify-content: center;
     overflow: hidden;
     cursor: zoom-in;
+    background: transparent;
   }
 
   img {
     max-width: 100%;
     max-height: 95vh;
-    border-radius: var(--radius-md);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.55);
+    border-radius: 0;
+    box-shadow: none;
     display: block;
-    transition: transform 120ms ease-out;
+    transition: none;
+    image-rendering: auto;
+    background: transparent;
   }
 
   .portfolio-lightbox__image--fill {
