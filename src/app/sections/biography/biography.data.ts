@@ -60,7 +60,7 @@ export const BIOGRAPHY_SOFT_SKILLS: BiographySoftSkill[] = [
   {
     id: 'team-player',
     title: 'ESPRIT D’ÉQUIPE',
-    description: 'Aime co-créer avec artisans, développeurs, PME et clients.',
+    description: 'Co-construit chaque projet avec les parties prenantes pour produire des livrables alignés sur les objectifs.',
   },
   {
     id: 'detail',
