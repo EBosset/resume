@@ -12,7 +12,7 @@ export const SERVICES: ServiceItem[] = [
     id: 'webdesigner-uiux',
     title: 'Webdesign UI/UX',
     shortDescription: `Logos, chartes graphiques et interfaces modernes, pensés pour votre marque et vos utilisateurs.`,
-    imageUrl: '/assets/services/webdesign-logo-charte-graphique-ui-ux-.webp',
+    imageUrl: '/assets/services/webdesign-logo-charte-graphique-ui-ux.webp',
     content: `
 WEBDESIGN / IDENTITÉ VISUELLE\n
 Je conçois des identités visuelles cohérentes et impactantes : logo, charte graphique, choix typographiques et palettes, ainsi que les supports clés.
@@ -39,7 +39,7 @@ Optimisation, responsive, accessibilité et bonnes pratiques front-end : votre s
     id: 'design-craft',
     title: 'Making',
     shortDescription: `Création de décors uniques et sur-mesure, adaptés à tous vos supports physiques.`,
-    imageUrl: '/assets/services/design-craft-creation-application-decors-tous-supports.webp',
+    imageUrl: '/assets/services/maker-decors-formes-matieres.webp',
     content: `
 Je crée des univers tangibles : fresques murales, vitrines, objets peints, textiles, motifs, textures ou installations événementielles.\n
 Chaque décor est original, sur-mesure et pensé pour révéler la matière, l’espace et votre univers.\n
