@@ -44,3 +44,17 @@ Thumbs.db
 
 # folders
 DOCS/
+
+# Angular/TypeScript caches
+.angular/
+
+# Incremental TypeScript builds
+*.tsbuildinfo
+
+# Other package manager logs
+pnpm-debug.log*
+
+# Local environment files (keys, secrets)
+.env
+.env.*
+*.local
