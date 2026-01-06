@@ -17,17 +17,17 @@ export interface BiographySoftSkill {
 export const BIOGRAPHY_INTRO: BiographyIntro = {
   paragraphs: [
     'Mon parcours s’articule autour d’un fil conducteur : la créativité.',
-    'Pendant plus de quinze ans, j’ai exercé le métier de céramiste, façonnant la matière pour transformer une idée en une forme tangible.',
-    'Par la suite, j’ai choisi d’explorer un autre univers : le design numérique. Loin d’être une rupture, cette orientation est restée dans la continuité de ma démarche créative.',
-    'La terre et l’écran sont deux supports différents, mais l’intention artistique et la logique de conception sont les mêmes.',
+    'Pendant plus de quinze ans, j’ai dirigé un studio de création matérielle : sculptures, décors et installations sur-mesure pour des marques et des événements.',
+    'Cette expertise du geste, des volumes et des matières nourrit aujourd’hui mon travail de design numérique, où je compose des interfaces, des parcours et des systèmes interactifs.',
+    'Qu’il s’agisse de façonner une pièce physique ou de prototyper une expérience digitale, l’intention artistique et la logique de conception sont les mêmes.',
   ],
 };
 
 export const BIOGRAPHY_HIGHLIGHTS: BiographyHighlight[] = [
   {
     id: 'atelier-ceramique',
-    label: '15 ans d’atelier',
-    description: 'Céramique, décors, installations artisanales sur-mesure.',
+    label: '15 ans de studio créatif',
+    description: 'Céramique, décors, illustrations & installations sur-mesure.',
   },
   {
     id: 'design-digital',
@@ -37,7 +37,7 @@ export const BIOGRAPHY_HIGHLIGHTS: BiographyHighlight[] = [
   {
     id: 'ponts-hybrides',
     label: 'Ponts hybrides',
-    description: 'Créer des passerelles entre artisanat et expériences numériques.',
+    description: 'Créer des passerelles entre matière et expériences numériques.',
   },
 ];
 
