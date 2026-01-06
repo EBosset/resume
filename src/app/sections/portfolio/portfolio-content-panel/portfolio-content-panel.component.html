@@ -14,6 +14,7 @@
               [class.portfolio-project__image--contain]="project.id === 'wordpress'"
               [src]="activeImage(project)"
               [alt]="project.title"
+              loading="lazy"
               (contextmenu)="$event.preventDefault()"
               (click)="openLightbox(project.id, lightboxStartImage(project), project.title, project.gallery)"
             />
@@ -39,6 +40,7 @@
                     [class.portfolio-project__thumb-image--contain]="project.id === 'wordpress'"
                     [src]="thumb"
                     [alt]="project.title + ' vignette'"
+                    loading="lazy"
                     (contextmenu)="$event.preventDefault()"
                   />
                 </button>
