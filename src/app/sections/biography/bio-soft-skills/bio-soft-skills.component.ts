@@ -23,7 +23,7 @@ export class BioSoftSkillsComponent implements OnInit {
 
   ngOnInit(): void {
     this.http
-      .get('assets/biography/soft-skills.svg', { responseType: 'text' })
+      .get('assets/biography/soft-skills-webdesign-developpement-web.svg', { responseType: 'text' })
       .subscribe((svg) => {
         this.illustrationSvg = this.sanitizer.bypassSecurityTrustHtml(svg);
       });
