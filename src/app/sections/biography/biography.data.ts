@@ -37,7 +37,7 @@ export const BIOGRAPHY_HIGHLIGHTS: BiographyHighlight[] = [
   {
     id: 'ponts-hybrides',
     label: 'Ponts hybrides',
-    description: 'Créer des passerelles entre matière et expériences numériques.',
+    description: 'Création de passerelles entre matière et expériences numériques.',
   },
 ];
 
