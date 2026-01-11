@@ -31,7 +31,7 @@ export const BIOGRAPHY_HIGHLIGHTS: BiographyHighlight[] = [
   },
   {
     id: 'design-digital',
-    label: 'Design Web',
+    label: '10 ans de Design Web',
     description: 'Webdesign, UI/UX et intégration front pour des projets immersifs.',
   },
   {
